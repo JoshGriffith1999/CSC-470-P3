@@ -4,3 +4,19 @@ C:\Users\Luke\OneDrive\Desktop\CSC470 - Software Engineering\P3\P3\P3\obj\Debug\
 C:\Users\Luke\OneDrive\Desktop\CSC470 - Software Engineering\P3\P3\P3\obj\Debug\netcoreapp3.1\P3.AssemblyInfoInputs.cache
 C:\Users\Luke\OneDrive\Desktop\CSC470 - Software Engineering\P3\P3\P3\obj\Debug\netcoreapp3.1\P3.AssemblyInfo.cs
 C:\Users\Luke\OneDrive\Desktop\CSC470 - Software Engineering\P3\P3\P3\obj\Debug\netcoreapp3.1\P3.csproj.CoreCompileInputs.cache
+C:\Users\maria\Desktop\Nick_School\P3\P3\P3\bin\Debug\netcoreapp3.1\P3.exe
+C:\Users\maria\Desktop\Nick_School\P3\P3\P3\bin\Debug\netcoreapp3.1\P3.deps.json
+C:\Users\maria\Desktop\Nick_School\P3\P3\P3\bin\Debug\netcoreapp3.1\P3.runtimeconfig.json
+C:\Users\maria\Desktop\Nick_School\P3\P3\P3\bin\Debug\netcoreapp3.1\P3.runtimeconfig.dev.json
+C:\Users\maria\Desktop\Nick_School\P3\P3\P3\bin\Debug\netcoreapp3.1\P3.dll
+C:\Users\maria\Desktop\Nick_School\P3\P3\P3\bin\Debug\netcoreapp3.1\P3.pdb
+C:\Users\maria\Desktop\Nick_School\P3\P3\P3\obj\Debug\netcoreapp3.1\P3.csproj.AssemblyReference.cache
+C:\Users\maria\Desktop\Nick_School\P3\P3\P3\obj\Debug\netcoreapp3.1\P3.Form1.resources
+C:\Users\maria\Desktop\Nick_School\P3\P3\P3\obj\Debug\netcoreapp3.1\P3.csproj.GenerateResource.cache
+C:\Users\maria\Desktop\Nick_School\P3\P3\P3\obj\Debug\netcoreapp3.1\P3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maria\Desktop\Nick_School\P3\P3\P3\obj\Debug\netcoreapp3.1\P3.AssemblyInfoInputs.cache
+C:\Users\maria\Desktop\Nick_School\P3\P3\P3\obj\Debug\netcoreapp3.1\P3.AssemblyInfo.cs
+C:\Users\maria\Desktop\Nick_School\P3\P3\P3\obj\Debug\netcoreapp3.1\P3.csproj.CoreCompileInputs.cache
+C:\Users\maria\Desktop\Nick_School\P3\P3\P3\obj\Debug\netcoreapp3.1\P3.dll
+C:\Users\maria\Desktop\Nick_School\P3\P3\P3\obj\Debug\netcoreapp3.1\P3.pdb
+C:\Users\maria\Desktop\Nick_School\P3\P3\P3\obj\Debug\netcoreapp3.1\P3.genruntimeconfig.cache
