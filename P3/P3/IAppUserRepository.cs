@@ -10,6 +10,6 @@ namespace P3
         public List<AppUser> GetALL();
         public void SetAuthentication(string UserName,  bool IsAuthenticated);
         public AppUser GetByUserName(string UserName);
-
+        
     }
 }
