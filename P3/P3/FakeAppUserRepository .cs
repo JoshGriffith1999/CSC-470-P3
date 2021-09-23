@@ -8,68 +8,32 @@ namespace P3
     class FakeAppUserRepository : IAppUserRepository
     {
         private static Dictionary<string, AppUser> AppUsers;
-        //Methods from the IAppUserRepositry Interface
-        private bool ValidateUserName(string userName)
+        public FakeAppUserRepository()
         {
-            foreach (KeyValuePair<string, AppUser> keyValuePair in AppUsers)
+            if (AppUsers == null)
             {
-
-                if (keyValuePair.Key == userName)
+                // A temporary dictionary to fake a database
+                AppUsers = new Dictionary<string, AppUser>();
+                AppUsers.Add("john", new AppUser
                 {
-
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                    UserName = "john",
+                    Password = "go",
+                    FirstName = "John",
+                    LastName = "Doe",
+                    EmailAddress = "john.doe@gmail.com",
+                    IsAuthenticated = false
+                });
             }
-            return false;
         }
-        private bool ValidatePassword(string password)
+        public bool Login(string UserName, string givenPassword)
         {
-            foreach (KeyValuePair<string, AppUser> keyValuePair in AppUsers)
+            bool match = false;
+            AppUser appUser;
+            if (AppUsers.TryGetValue(UserName, out appUser))
             {
-
-                if (keyValuePair.Key == password)
-                {
-
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                match = appUser.Password == givenPassword;
             }
-            return false;
-        }
-        public bool Login(string UserName, string Password)
-        {
-            if (string.IsNullOrEmpty(UserName))
-            {
-                return false;
-
-            }
-            else if (string.IsNullOrEmpty(Password))
-            {
-                return false;
-            }
-            else
-            {
-                string StringWithoutSpclCharac;
-                StringWithoutSpclCharac = Regex.Replace(UserName, @"[^0-9a-zA-Z:,]+", "");
-                bool testUserName = ValidateUserName(StringWithoutSpclCharac);
-                StringWithoutSpclCharac = Regex.Replace(Password, @"[^0-9a-zA-Z:,]+", "");
-                bool testPassword = ValidatePassword(StringWithoutSpclCharac);
-                if (testUserName == true &&testPassword == true)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
+            return match;
         }           
         public List<AppUser> GetALL() {
             List<AppUser> users = new List<AppUser>();
@@ -80,7 +44,7 @@ namespace P3
             return users;
         }
         public void SetAuthentication(string UserName, bool IsAuthenticated) {
-            
+            AppUsers[UserName].IsAuthenticated = IsAuthenticated;
         }
         public AppUser GetByUserName(string UserName) {
             AppUser user;
