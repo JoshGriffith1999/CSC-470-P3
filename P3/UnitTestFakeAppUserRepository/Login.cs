@@ -1,5 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿/*
+ Look at this one
+This is the correct version using the .NET Framework 4.7.2
+Unit Tests work with the other project
+ */
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using P3;
 
 namespace UnitTestFakeAppUserRepository
 {
@@ -14,7 +20,7 @@ namespace UnitTestFakeAppUserRepository
             const string password = "go";
             FakeAppUserRepository EmpRepository = new FakeAppUserRepository();
             //Act
-            bool correctCredentials = EmpRepository.Login(userName,password);
+            bool correctCredentials = EmpRepository.Login(userName, password);
             //Assert
             Assert.IsTrue(correctCredentials);
         }
@@ -29,7 +35,6 @@ namespace UnitTestFakeAppUserRepository
             //Assert
             Assert.IsFalse(incorrectCredentials);
         }
-
 
     }
 }

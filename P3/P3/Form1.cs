@@ -16,6 +16,5 @@ namespace P3
         {
             InitializeComponent();
         }
-
     }
 }

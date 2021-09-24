@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{10EE7911-EAB2-49CB-830B-7B6027AA69AC}</ProjectGuid>
+    <ProjectGuid>{9E205472-0A05-4255-9FD8-CF359B070118}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UnitTestFakeAppUserRepository</RootNamespace>
@@ -45,6 +45,7 @@
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.2.1.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
@@ -56,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\P3\P3.csproj">
-      <Project>{0c4f68a7-15da-4b7b-b7b6-d9f464ef2e4f}</Project>
+      <Project>{bedba366-ba69-4fea-a51b-7b17178cfd55}</Project>
       <Name>P3</Name>
     </ProjectReference>
   </ItemGroup>

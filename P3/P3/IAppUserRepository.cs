@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace P3
 {
     interface IAppUserRepository
     {
-        public bool Login(string UserName, string Password);
-        public List<AppUser> GetALL();
-        public void SetAuthentication(string UserName,  bool IsAuthenticated);
-        public AppUser GetByUserName(string UserName);
-        
+        bool Login(string UserName, string Password);
+        List<AppUser> GetALL();
+        void SetAuthentication(string UserName, bool IsAuthenticated);
+        AppUser GetByUserName(string UserName);
+
     }
 }
