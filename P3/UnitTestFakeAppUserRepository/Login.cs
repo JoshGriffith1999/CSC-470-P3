@@ -1,4 +1,10 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿/*
+ Old Version of the Project
+I accidently created this for .NET core 3.1 instead of .NET Framework 4.7.2
+Can Look at this one, the unit tests do not work with the other solution
+ 
+ */
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace UnitTestFakeAppUserRepository
