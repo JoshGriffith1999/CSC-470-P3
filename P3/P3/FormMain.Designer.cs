@@ -1,7 +1,7 @@
 ﻿
 namespace P3
 {
-    partial class Form1
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -21,6 +21,8 @@ namespace P3
             base.Dispose(disposing);
         }
 
+       
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -29,13 +31,34 @@ namespace P3
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.MainFormMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.SuspendLayout();
+            // 
+            // MainFormMenuStrip
+            // 
+            this.MainFormMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MainFormMenuStrip.Name = "MainFormMenuStrip";
+            this.MainFormMenuStrip.Size = new System.Drawing.Size(800, 24);
+            this.MainFormMenuStrip.TabIndex = 0;
+            this.MainFormMenuStrip.Text = "menuStrip1";
+            // 
+            // FormMain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Controls.Add(this.MainFormMenuStrip);
+            this.MainMenuStrip = this.MainFormMenuStrip;
+            this.Name = "FormMain";
+            this.Text = "Main";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.MenuStrip MainFormMenuStrip;
     }
 }
 
