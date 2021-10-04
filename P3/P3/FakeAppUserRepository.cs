@@ -23,7 +23,7 @@ namespace P3
                     LastName = "Doe",
                     EmailAddress = "john.doe@gmail.com",
                     IsAuthenticated = false
-                });
+                }) ;
             }
         }
         public bool Login(string UserName, string givenPassword)
@@ -32,7 +32,10 @@ namespace P3
             AppUser appUser;
             if (AppUsers.TryGetValue(UserName, out appUser))
             {
-                match = appUser.Password == givenPassword;
+                if (appUser.Password == givenPassword) { 
+                    match = true;
+                    SetAuthentication(UserName, match);
+                }
             }
             return match;
         }           

@@ -37,7 +37,7 @@ namespace P3
             bool canSignIn = UserRepository.Login(this.User.UserName, this.User.Password);
                   
             //This here is for by passing the authentication step - delete before final commit
-            if (this.User.UserName == "Root" && this.User.Password == "Toor")
+            if (this.User.UserName == "john" && this.User.Password == "go")
             {
                 UserRepository.SetAuthentication(this.User.UserName, true);
                 this.DialogResult = DialogResult.OK;
@@ -51,7 +51,7 @@ namespace P3
                     this.Passed = false;
                     this.Close();
                 }
-                MessageBox.Show("Invlid Login, Please Reenter", "Attention");
+                MessageBox.Show("Invalid Login, Please Reenter", "Attention");
             }
             else
             {
