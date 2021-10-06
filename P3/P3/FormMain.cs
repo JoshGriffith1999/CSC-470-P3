@@ -16,8 +16,8 @@ namespace P3
         public FormMain()
         {
             InitializeComponent();
+            CenterToScreen();
             setUp();
-
         }
 
         void setUp()
