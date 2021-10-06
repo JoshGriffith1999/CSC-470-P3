@@ -27,6 +27,7 @@ namespace P3
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 

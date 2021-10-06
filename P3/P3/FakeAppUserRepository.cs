@@ -47,8 +47,8 @@ namespace P3
             }
             return users;
         }
-        public void SetAuthentication(string UserName, bool IsAuthenticated) {
-            AppUsers[UserName].IsAuthenticated = IsAuthenticated;
+        public void SetAuthentication(string UserName, bool IsAuth) {
+            AppUsers[UserName].IsAuthenticated = IsAuth;
         }
         public AppUser GetByUserName(string UserName) {
             AppUser user;
