@@ -29,3 +29,14 @@ C:\Users\Luke\OneDrive\Desktop\CSC470 - Software Engineering\P3\P3\P3\obj\Debug\
 C:\Users\Luke\OneDrive\Desktop\CSC470 - Software Engineering\P3\P3\P3\obj\Debug\P3.csproj.CoreCompileInputs.cache
 C:\Users\Luke\OneDrive\Desktop\CSC470 - Software Engineering\P3\P3\P3\obj\Debug\P3.exe
 C:\Users\Luke\OneDrive\Desktop\CSC470 - Software Engineering\P3\P3\P3\obj\Debug\P3.pdb
+C:\Users\maria\Desktop\Nick_School\P4\P3\P3\bin\Debug\P3.exe.config
+C:\Users\maria\Desktop\Nick_School\P4\P3\P3\bin\Debug\P3.exe
+C:\Users\maria\Desktop\Nick_School\P4\P3\P3\bin\Debug\P3.pdb
+C:\Users\maria\Desktop\Nick_School\P4\P3\P3\obj\Debug\P3.csproj.AssemblyReference.cache
+C:\Users\maria\Desktop\Nick_School\P4\P3\P3\obj\Debug\P3.FormLogin.resources
+C:\Users\maria\Desktop\Nick_School\P4\P3\P3\obj\Debug\P3.FormMain.resources
+C:\Users\maria\Desktop\Nick_School\P4\P3\P3\obj\Debug\P3.Properties.Resources.resources
+C:\Users\maria\Desktop\Nick_School\P4\P3\P3\obj\Debug\P3.csproj.GenerateResource.cache
+C:\Users\maria\Desktop\Nick_School\P4\P3\P3\obj\Debug\P3.csproj.CoreCompileInputs.cache
+C:\Users\maria\Desktop\Nick_School\P4\P3\P3\obj\Debug\P3.exe
+C:\Users\maria\Desktop\Nick_School\P4\P3\P3\obj\Debug\P3.pdb

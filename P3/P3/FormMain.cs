@@ -16,8 +16,8 @@ namespace P3
         public FormMain()
         {
             InitializeComponent();
+            CenterToScreen();
             setUp();
-
         }
 
         void setUp()
@@ -30,7 +30,9 @@ namespace P3
             //This triggers if the user has failed three login in attempts
             if (Login.returnPassed() == false)
             {
+                //Exit application entirely
                 this.Close();
+                Application.Exit();
             }
 
             //These trigger if the number of failed attempts are less then 3
@@ -41,6 +43,7 @@ namespace P3
             else
             {
                 this.User = Login.returnUser();
+                this.Text = "Main - No Project Selected";
             }
         }
 
