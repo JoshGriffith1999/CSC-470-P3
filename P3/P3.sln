@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3", "P3\P3.csproj", "{BEDBA366-BA69-4FEA-A51B-7B17178CFD55}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User_Application", "P3\User_Application.csproj", "{BEDBA366-BA69-4FEA-A51B-7B17178CFD55}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestFakeAppUserRepository", "UnitTestFakeAppUserRepository\UnitTestFakeAppUserRepository.csproj", "{9E205472-0A05-4255-9FD8-CF359B070118}"
 EndProject
