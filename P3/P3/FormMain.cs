@@ -17,13 +17,14 @@ namespace P3
         {
             InitializeComponent();
             CenterToScreen();
-            setUp();
+            Load += new EventHandler(FormMain_load);
         }
 
-        void setUp()
+        private void FormMain_load(object sender, System.EventArgs e)
         {
+            this.Hide();
             FormLogin Login = new FormLogin();
-
+            Login.ShowDialog();
             DialogResult result = Login.ShowDialog();
             this.User.IsAuthenticated = Login.IsUserAuthenticated();
 

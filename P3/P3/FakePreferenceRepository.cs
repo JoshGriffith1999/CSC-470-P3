@@ -11,10 +11,17 @@ namespace P3
         public const string PREFERENCE_PROJECY_ID = "PREFERENCE_PROJECY_ID";
         public const string PREFERENCE_PROJECY_NAME = "PREFERENCE_PROJECY_NAME";
         private const string NO_ERROR = "NO Erros";
-        private static Dictionary<string, Dictionary<string, string>> Preferences;
+        private static Dictionary<string, Dictionary<string, string>> Preferences = new Dictionary<string, Dictionary<string, string>>();
         /*****************************************/
         public string GetPreference(string UserName, string PreferenceName) {
-            return "Hello";
+            Dictionary<string, string> NameValuepair = new Dictionary<string, string>();
+            string value = "";
+            if(Preferences.TryGetValue(UserName, out NameValuepair))
+            {
+                NameValuepair.TryGetValue(PreferenceName, out value);
+            }
+
+            return value;
         }
         public string SetPreference(string UserName, string PreferenceName, string Value)
         {

@@ -38,15 +38,6 @@ namespace P3
 
             bool canSignIn = UserRepository.Login(this.User.UserName, this.User.Password);
                   
-            //This here is for by passing the authentication step - delete before final commit
-            /*
-                if (this.User.UserName == "john" && this.User.Password == "go")
-                {
-                    UserRepository.SetAuthentication(this.User.UserName, true);
-                    this.DialogResult = DialogResult.OK;
-                }
-            */
-
             if(canSignIn != true)
             {
                 this.FailedAttempts += 1;
