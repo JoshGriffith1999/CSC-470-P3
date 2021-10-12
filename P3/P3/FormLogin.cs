@@ -12,11 +12,9 @@ namespace P3
 {
     public partial class FormLogin : Form
     {
-        private int FailedAttempts = 0;
-        private bool Passed = true;
         private AppUser User = new AppUser();
-
         FakeAppUserRepository UserRepository = new FakeAppUserRepository();
+
         public FormLogin()
         {
             InitializeComponent();
@@ -24,62 +22,50 @@ namespace P3
             PasswordTextBox.PasswordChar = '*';
         }
 
-
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-            this.Close();
+            this.Hide();
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
             this.User.UserName = UserNameTextBox.Text.ToString();
             this.User.Password = PasswordTextBox.Text.ToString();
+            this.User.IsAuthenticated = false;
+            this.DialogResult = DialogResult.None;
 
-            bool canSignIn = UserRepository.Login(this.User.UserName, this.User.Password);
-                  
-            if(canSignIn != true)
-            {
-                this.FailedAttempts += 1;
-                if(this.FailedAttempts == 3)
-                {
-                    this.Passed = false;
-                    this.Close();
-                }
-                MessageBox.Show("Invalid Login, Please Reenter Login Credentials", "Attention");
-            }
-            else
-            {
-                UserRepository.SetAuthentication(this.User.UserName, true);
-                this.DialogResult = DialogResult.OK;
-            }
-
-
-
+            Login();
+            this.Hide();
         }
 
-        /***************Public Methods**************************/
-        /// <returns></returns>
-        public bool IsUserAuthenticated()
+        public AppUser GetUser()
         {
-            return this.User.IsAuthenticated;
-        }
-
-        public bool returnPassed()
-        {
-            return this.Passed;
-        }
-
-        public AppUser returnUser() {
-
             return this.User;
         }
 
-        public bool setAuthentication(string UserName) {
+        public void Login() {
 
-            UserRepository.SetAuthentication(UserName, true);
-            return true;
+            bool IsAuthenticatied = UserRepository.Login(this.User.UserName, this.User.Password);
+
+            if (IsAuthenticatied == true)
+            {
+                this.DialogResult = DialogResult.OK;
+                setAuthentication(this.User.UserName, true);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Incorrect Username or Password", "Attention");
+            }
+
         }
+
+        public void setAuthentication(string UserToAuthent, bool authent) {
+            UserRepository.SetAuthentication(UserToAuthent, authent);
+            User = UserRepository.GetByUserName(UserToAuthent);
+        }
+
     }
 
 }

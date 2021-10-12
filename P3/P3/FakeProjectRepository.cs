@@ -20,10 +20,18 @@ namespace P3
             Projects.Insert(out_id, project);
             return "New Project created";
         }
-       public string Remove(int ProjectID) { }
-       public string Modify(int ProjectID, Project project) { }
-        Project GetAll() {       }
-       public bool IsDuplicateName(string ProjectName) { }
+       public string Remove(int ProjectID) {
+            return "Test";
+        }
+       public string Modify(int ProjectID, Project project) {
+            return "Test";
+        }
+       public Project GetAll() {
+            return Projects[0];
+        }
+       public bool IsDuplicateName(string ProjectName) {
+            return true;
+        }
 
     }
 }

@@ -6,3 +6,6 @@ C:\Users\DSU\Desktop\CSC-470-P3\P3\P3\obj\Debug\User_Application.csproj.Generate
 C:\Users\DSU\Desktop\CSC-470-P3\P3\P3\obj\Debug\User_Application.csproj.CoreCompileInputs.cache
 C:\Users\DSU\Desktop\CSC-470-P3\P3\P3\obj\Debug\P3.exe
 C:\Users\DSU\Desktop\CSC-470-P3\P3\P3\obj\Debug\P3.pdb
+C:\Users\DSU\Desktop\CSC-470-P3\P3\P3\bin\Debug\P3.exe.config
+C:\Users\DSU\Desktop\CSC-470-P3\P3\P3\bin\Debug\P3.exe
+C:\Users\DSU\Desktop\CSC-470-P3\P3\P3\bin\Debug\P3.pdb

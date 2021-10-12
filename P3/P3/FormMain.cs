@@ -12,7 +12,9 @@ namespace P3
 {
     public partial class FormMain : Form
     {
+        FakeAppUserRepository UserRepository = new FakeAppUserRepository();
         private AppUser User = new AppUser();
+        DialogResult result = DialogResult.None;
         public FormMain()
         {
             InitializeComponent();
@@ -22,28 +24,43 @@ namespace P3
 
         private void FormMain_load(object sender, System.EventArgs e)
         {
-            this.Hide();
             FormLogin Login = new FormLogin();
-            Login.ShowDialog();
-            DialogResult result = Login.ShowDialog();
-            this.User.IsAuthenticated = Login.IsUserAuthenticated();
 
-            //This triggers if the user has failed three login in attempts
-            if (Login.returnPassed() == false)
+            int FailedAttempts = 0;
+            int MaxFailedAttempts = 3;
+            User.IsAuthenticated = false;
+
+            while(User.IsAuthenticated != true && result != DialogResult.OK)
             {
-                //Exit application entirely
+                result = Login.ShowDialog();
+                User = Login.GetUser();
+
+                if (result == DialogResult.Cancel)
+                {
+                    break;
+                }
+
+                if(result != DialogResult.OK)
+                {
+                    FailedAttempts += 1;
+                    if (FailedAttempts == MaxFailedAttempts)
+                    {
+                        result = DialogResult.Cancel;
+                        break;
+                    }
+                    
+                }
+               
+            }
+
+            if(result == DialogResult.Cancel)
+            {
                 this.Close();
                 Application.Exit();
             }
-
-            //These trigger if the number of failed attempts are less then 3
-            if (this.User.IsAuthenticated != true && result != DialogResult.OK)
-            {
-                Login.setAuthentication(User.UserName);
-            }
             else
             {
-                this.User = Login.returnUser();
+                User = Login.GetUser();
                 this.Text = "Main - No Project Selected";
             }
         }

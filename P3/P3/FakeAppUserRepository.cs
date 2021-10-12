@@ -28,16 +28,15 @@ namespace P3
         }
         public bool Login(string UserName, string givenPassword)
         {
-            bool match = false;
             AppUser appUser;
             if (AppUsers.TryGetValue(UserName, out appUser))
             {
                 if (appUser.Password == givenPassword) { 
-                    match = true;
-                    SetAuthentication(UserName, match);
+                    SetAuthentication(UserName, true);
+                    return true;
                 }
             }
-            return match;
+            return false;
         }           
         public List<AppUser> GetALL() {
             List<AppUser> users = new List<AppUser>();
@@ -47,8 +46,8 @@ namespace P3
             }
             return users;
         }
-        public void SetAuthentication(string UserName, bool IsAuth) {
-            AppUsers[UserName].IsAuthenticated = IsAuth;
+        public void SetAuthentication(string UserName, bool IsAuthenticated) {
+            AppUsers[UserName].IsAuthenticated = IsAuthenticated;
         }
         public AppUser GetByUserName(string UserName) {
             AppUser user;
