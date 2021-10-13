@@ -14,6 +14,8 @@ namespace P3
     {
         FakeAppUserRepository UserRepository = new FakeAppUserRepository();
         private AppUser User = new AppUser();
+        FakeProjectRepository ProjectRepository = new FakeProjectRepository();
+        private List<Project> Projects = new List<Project>();
         DialogResult result = DialogResult.None;
         public FormMain()
         {
@@ -25,7 +27,7 @@ namespace P3
         private void FormMain_load(object sender, System.EventArgs e)
         {
             FormLogin Login = new FormLogin();
-
+            
             int FailedAttempts = 0;
             int MaxFailedAttempts = 3;
             User.IsAuthenticated = false;
@@ -67,7 +69,7 @@ namespace P3
 
         private void selectProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormSelectProject S = new FormSelectProject();
+            FormSelectProject S = new FormSelectProject(ProjectRepository, Projects);
             S.ShowDialog();
         }
 
