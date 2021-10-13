@@ -16,6 +16,7 @@ namespace P3
         private AppUser User = new AppUser();
         FakeProjectRepository ProjectRepository = new FakeProjectRepository();
         private List<Project> Projects = new List<Project>();
+        Project ProjectInUse = new Project();
         DialogResult result = DialogResult.None;
         public FormMain()
         {
@@ -71,6 +72,8 @@ namespace P3
         {
             FormSelectProject S = new FormSelectProject(ProjectRepository, Projects);
             S.ShowDialog();
+            ProjectInUse = S.returnProject();
+            this.Text = "Main - " + ProjectInUse.Name;
         }
 
         private void createProjectToolStripMenuItem_Click(object sender, EventArgs e)

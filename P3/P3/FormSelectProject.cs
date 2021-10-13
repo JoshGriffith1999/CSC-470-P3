@@ -14,6 +14,7 @@ namespace P3
     {
 
         FakeProjectRepository Repository = new FakeProjectRepository();
+        Project ProjectInUse = new Project();
         public FormSelectProject()
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace P3
 
             InitializeComponent();
             Projects = P.GetAll();
+            
             string fillbox = "Hello";
             int i = 0;
            // SelectProjectListBox.DataSource = Projects;
@@ -50,12 +52,19 @@ namespace P3
 
         private void SelectProjectButton_Click(object sender, EventArgs e)
         {
-
+            string listitem = SelectProjectListBox.SelectedItem.ToString();
+            string[] split = listitem.Split(' ');
+            int index = Int32.Parse(split[0]);
+            string itemName = split[2];
+            ProjectInUse.ID = index;
+            ProjectInUse.Name = itemName;
+            this.Hide();
         }
         
-        public void setRepository(FakeProjectRepository P)
+        public Project returnProject()
         {
-            this.Repository = P;
+            return ProjectInUse;
         }
+        
     }
 }
