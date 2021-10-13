@@ -65,6 +65,24 @@ namespace P3
             }
         }
 
-        
+        private void selectProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void createProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void modifyProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void removeProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
