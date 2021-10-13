@@ -12,26 +12,37 @@ namespace P3
 {
     public partial class FormSelectProject : Form
     {
-        Project project = new Project();
-        FakeProjectRepository P = new FakeProjectRepository();
+
+        FakeProjectRepository Repository = new FakeProjectRepository();
+        Project ProjectInUse = new Project();
         public FormSelectProject()
         {
             InitializeComponent();
+        }
+
+        public FormSelectProject(FakeProjectRepository P, List<Project> Projects)
+        {
+
+            InitializeComponent();
+            Projects = P.GetAll();
             
             string fillbox = "Hello";
-            List<Project> Projects = P.GetAll();
-            //SelectProjectListBox.DataSource = Projects;
-            if(Projects != null)
-                fillbox = Projects[1].ID + " - " + Projects[1].Name;
-            MessageBox.Show(fillbox);
+            int i = 0;
+           // SelectProjectListBox.DataSource = Projects;
+
+            //MessageBox.Show(fillbox);
             foreach (Project p in Projects)
             {
+                i = p.ID;
                 fillbox = p.ID + " - " + p.Name;
+
+                SelectProjectListBox.Items.Insert(i,fillbox);
                 
-                SelectProjectListBox.Items.Add(fillbox);
             }
-            
+
         }
+
+
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
@@ -41,7 +52,19 @@ namespace P3
 
         private void SelectProjectButton_Click(object sender, EventArgs e)
         {
-
+            string listitem = SelectProjectListBox.SelectedItem.ToString();
+            string[] split = listitem.Split(' ');
+            int index = Int32.Parse(split[0]);
+            string itemName = split[2];
+            ProjectInUse.ID = index;
+            ProjectInUse.Name = itemName;
+            this.Hide();
         }
+        
+        public Project returnProject()
+        {
+            return ProjectInUse;
+        }
+        
     }
 }

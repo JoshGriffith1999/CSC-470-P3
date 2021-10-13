@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P3
 {
-    class FakeProjectRepository : IProjectRepository
+    public class FakeProjectRepository : IProjectRepository
     {
         public const string NO_ERROR = "No Errors";
         public const string MODIFIED_PROJECT_ID = "MODIFIED_PROJECT_ID";
@@ -17,18 +17,18 @@ namespace P3
         /****************************************************************************/
         public FakeProjectRepository()
         {
-            if (Projects == null)
+            if (Projects.Count <= 1)
             {
                 Project test0 = new Project(0, "test0");
-                Projects.Insert(0,test0);
+                Projects.Insert(0, test0);
                 Project test1 = new Project(1, "test1");
                 Projects.Insert(1, test1);
                 Project test2 = new Project(2, "test2");
                 Projects.Insert(2, test2);
                 Project test3 = new Project(3, "test3");
                 Projects.Insert(3, test3);
-
             }
+            
         }
        public  string Add(Project project, int out_id) {
             //The following line might work? I do not know as of now
