@@ -18,10 +18,11 @@ namespace P3
         {
             InitializeComponent();
             
-            string fillbox;
+            string fillbox = "Hello";
             List<Project> Projects = P.GetAll();
             //SelectProjectListBox.DataSource = Projects;
-            fillbox = Projects[0].ID + " - " + Projects[0].Name;
+            if(Projects != null)
+                fillbox = Projects[1].ID + " - " + Projects[1].Name;
             MessageBox.Show(fillbox);
             foreach (Project p in Projects)
             {
