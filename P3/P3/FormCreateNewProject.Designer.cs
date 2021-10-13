@@ -1,6 +1,6 @@
 ﻿namespace P3
 {
-    partial class CreateNewProjectForm
+    partial class FormCreateNewProject
     {
         /// <summary>
         /// Required designer variable.

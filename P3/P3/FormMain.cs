@@ -67,12 +67,14 @@ namespace P3
 
         private void selectProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormSelectProject S = new FormSelectProject();
+            S.ShowDialog();
         }
 
         private void createProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormCreateNewProject C = new FormCreateNewProject();
+            C.ShowDialog();
         }
 
         private void modifyProjectToolStripMenuItem_Click(object sender, EventArgs e)
