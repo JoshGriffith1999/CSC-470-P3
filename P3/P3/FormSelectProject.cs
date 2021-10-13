@@ -23,17 +23,19 @@ namespace P3
         {
 
             InitializeComponent();
-
+            Projects = P.GetAll();
             string fillbox = "Hello";
-            
-            //SelectProjectListBox.DataSource = Projects;
+            int i = 0;
+           // SelectProjectListBox.DataSource = Projects;
 
-            MessageBox.Show(fillbox);
+            //MessageBox.Show(fillbox);
             foreach (Project p in Projects)
             {
+                i = p.ID;
                 fillbox = p.ID + " - " + p.Name;
 
-                SelectProjectListBox.Items.Add(fillbox);
+                SelectProjectListBox.Items.Insert(i,fillbox);
+                
             }
 
         }
