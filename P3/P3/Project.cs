@@ -8,7 +8,13 @@ namespace P3
 {
     class Project
     {
-        int ID;
-        string Name;
+        public int ID;
+        public string Name;
+        public Project(int inputID, string inputName)
+        {
+            ID = inputID;
+            Name = inputName;
+        }
+        public Project() { }
     }
 }
