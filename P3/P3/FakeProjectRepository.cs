@@ -30,11 +30,11 @@ namespace P3
             }
             
         }
-       public  string Add(Project project, int out_id) {
-            //The following line might work? I do not know as of now
+       public string Add(Project project, int out_id) {
+            //THIS IS WORKING
             int i = this.GetNextInt();
             project.ID = i;
-            Projects.Append(project);
+            Projects.Add(project);
             return "New Project created";
         }
        public string Remove(int ProjectID) {

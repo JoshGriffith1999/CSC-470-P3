@@ -13,23 +13,39 @@ namespace P3
     public partial class FormCreateNewProject : Form
     {
         Project project = new Project();
-        FakeProjectRepository Projects = new FakeProjectRepository();
+        FakeProjectRepository ProjectRepository = new FakeProjectRepository();
+        List<Project> Projects = new List<Project>();
+        
         public FormCreateNewProject()
         {
             InitializeComponent();
         }
-
+        public FormCreateNewProject(FakeProjectRepository P)
+        {
+            InitializeComponent();
+            ProjectRepository = P;
+            Projects = P.GetAll();
+        }
         private void AddProjectButton_Click(object sender, EventArgs e)
         {
             this.project.Name = AddNewProjectName.Text.ToString();
-            bool checker = Projects.IsDuplicateName(project.Name);
+            bool checker = ProjectRepository.IsDuplicateName(project.Name);
             if (checker == true)
             {
-                MessageBox.Show("This Name is already in use.", "Attention");
+                MessageBox.Show("This name is already in use.", "Attention");
             }
             else
-                MessageBox.Show( Projects.Add(project, 0) , "Attention"); 
+            {
+                ProjectRepository.Add(project,0);
+                MessageBox.Show(Projects[4].Name, "Attention");
+            }
             this.Hide();
+        }
+
+        
+        public FakeProjectRepository ReturnRepository()
+        {
+            return ProjectRepository;
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

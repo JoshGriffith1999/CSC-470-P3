@@ -78,8 +78,10 @@ namespace P3
 
         private void createProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormCreateNewProject C = new FormCreateNewProject();
+            FormCreateNewProject C = new FormCreateNewProject(ProjectRepository);
             C.ShowDialog();
+            ProjectRepository = C.ReturnRepository();
+            Projects = ProjectRepository.GetAll();
         }
 
         private void modifyProjectToolStripMenuItem_Click(object sender, EventArgs e)
