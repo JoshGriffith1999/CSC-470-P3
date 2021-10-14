@@ -40,7 +40,7 @@ namespace P3
        public string Remove(int ProjectID) {
             //This might work? Not sure exactly. We will need to create a form to be able to select the one we want to remove.
             Projects.RemoveAt(ProjectID);
-            return "Project Removed";
+            return "Project Removed successfully";
         }
        public string Modify(int ProjectID, Project project) {
             return "Test";

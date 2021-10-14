@@ -13,10 +13,12 @@ namespace P3
     public partial class FormMain : Form
     {
         FakeAppUserRepository UserRepository = new FakeAppUserRepository();
-        private AppUser User = new AppUser();
         FakeProjectRepository ProjectRepository = new FakeProjectRepository();
-        private List<Project> Projects = new List<Project>();
         Project ProjectInUse = new Project();
+        
+        private AppUser User = new AppUser();
+        private List<Project> Projects = new List<Project>();
+       
         DialogResult result = DialogResult.None;
         public FormMain()
         {
@@ -91,6 +93,10 @@ namespace P3
 
         private void removeProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FormRemoveProject removeProject = new FormRemoveProject(ProjectRepository, ProjectInUse);
+            removeProject.ShowDialog();
+            ProjectRepository = removeProject.returnRepo();
+            this.Projects = ProjectRepository.GetAll();
 
         }
     }

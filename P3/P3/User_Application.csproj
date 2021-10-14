@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppUser.cs" />
+    <Compile Include="FormRemoveProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRemoveProject.Designer.cs">
+      <DependentUpon>FormRemoveProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSelectProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRemoveProject.resx">
+      <DependentUpon>FormRemoveProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSelectProject.resx">
       <DependentUpon>FormSelectProject.cs</DependentUpon>

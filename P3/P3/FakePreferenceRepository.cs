@@ -25,7 +25,11 @@ namespace P3
         }
         public string SetPreference(string UserName, string PreferenceName, string Value)
         {
-            return "Hello";
+            Dictionary<string, string> NameValuepair = new Dictionary<string, string>();
+            NameValuepair.Add(UserName, PreferenceName);
+            Preferences.Add(Value, NameValuepair);
+
+            return Value;
         }
     }
 }
