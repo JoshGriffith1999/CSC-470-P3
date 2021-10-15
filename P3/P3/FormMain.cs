@@ -66,7 +66,32 @@ namespace P3
             else
             {
                 User = Login.GetUser();
-                this.Text = "Main - No Project Selected";
+                FormSelectProject S = new FormSelectProject(ProjectRepository, Projects);
+
+                int cancelCtr = 0;
+                while (cancelCtr < 2)
+                {
+                    result = S.ShowDialog();
+                    if (result != DialogResult.OK)
+                    {
+                        MessageBox.Show("A Project must be selected");
+                        cancelCtr++;
+                    }
+                    else
+                    {
+                        ProjectInUse = S.returnProject();
+                        this.Text = "Main - " + ProjectInUse.Name;
+                        break;
+                    }
+                    if (cancelCtr >= 2)
+                    {
+                        //Quit program if no project is selected after 2 cancel clicks
+                        Application.Exit();
+                    }
+                }
+             
+                
+                //this.Text = "Main - No Project Selected";
             }
         }
 
@@ -88,7 +113,12 @@ namespace P3
 
         private void modifyProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormSelectProject M = new FormSelectProject(ProjectRepository, Projects);
+            M.ShowDialog();
+            Project selectedProject = M.returnProject();
+            FormModifyProject Modifier = new FormModifyProject(ProjectInUse, selectedProject);
+            Modifier.ShowDialog();
+            this.Text = "Main - " + ProjectInUse.Name;
         }
 
         private void removeProjectToolStripMenuItem_Click(object sender, EventArgs e)
