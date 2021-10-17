@@ -72,6 +72,7 @@
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.SelectProjectListBox);
             this.Name = "FormSelectProject";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Project";
             this.ResumeLayout(false);
 

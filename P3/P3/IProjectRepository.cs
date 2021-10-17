@@ -10,7 +10,7 @@ namespace P3
     {
         string Add(Project project, int out_id);
         string Remove(int ProjectID);
-        string Modify(int ProjectID, Project project);
+        string Modify(int projectID, Project Project);
         List<Project> GetAll();
         bool IsDuplicateName(string ProjectName);
     }

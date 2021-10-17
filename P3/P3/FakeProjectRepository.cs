@@ -9,7 +9,7 @@ namespace P3
     public class FakeProjectRepository : IProjectRepository
     {
         public const string NO_ERROR = "No Errors";
-        public const string MODIFIED_PROJECT_ID = "MODIFIED_PROJECT_ID";
+        public const string MODIFIED_PROJECT_ID_ERROR = "MODIFIED_PROJECT_ID";
         public const string DUPICATE_PROJECT_NAME_ERROR = "DUPICATE_PROJECT_NAME_ERROR";
         public const string NO_PROJECT_FOUND_ERROR = "NO_PROJECT_FOUND_ERROR";
         public const string EMPTY_PROJECT_NAME_ERROR = "EMPTY_PROJECT_NAME_ERROR";
@@ -32,7 +32,7 @@ namespace P3
         }
        public string Add(Project project, int out_id) {
             //THIS IS WORKING
-            int i = this.GetNextInt();
+            int i = this.GetNextId();
             project.ID = i;
             Projects.Add(project);
             return "New Project created";
@@ -40,10 +40,17 @@ namespace P3
        public string Remove(int ProjectID) {
             //This might work? Not sure exactly. We will need to create a form to be able to select the one we want to remove.
             Projects.RemoveAt(ProjectID);
-            return "Project Removed";
+            return "Project Removed successfully";
         }
-       public string Modify(int ProjectID, Project project) {
-            return "Test";
+       public string Modify(int projectID, Project Project) {
+            foreach (Project p in Projects)
+            {
+                if (p.ID == Project.ID)
+                {
+                    p.Name = Project.Name;
+                }
+            }
+            return "Project Modified successfully.";
         }
        public List<Project> GetAll() {
             return Projects;
@@ -57,7 +64,7 @@ namespace P3
             }
             return checker;
         }
-        private int GetNextInt()
+        private int GetNextId()
         {
             int i = 0;
             foreach(Project p in Projects)

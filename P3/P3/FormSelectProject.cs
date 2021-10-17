@@ -18,12 +18,14 @@ namespace P3
         public FormSelectProject()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         public FormSelectProject(FakeProjectRepository P, List<Project> Projects)
         {
 
             InitializeComponent();
+            CenterToScreen();
             Projects = P.GetAll();
             
             string fillbox = "Hello";
@@ -59,6 +61,7 @@ namespace P3
             ProjectInUse.ID = index;
             ProjectInUse.Name = itemName;
             this.Hide();
+            this.DialogResult = DialogResult.OK;
         }
         
         public Project returnProject()
