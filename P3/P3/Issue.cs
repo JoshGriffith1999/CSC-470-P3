@@ -8,12 +8,12 @@ namespace P3
 {
     class Issue
     {
-        int issue;
+        int ID;
         int ProjectId;
         string Title;
         DateTime DiscoveryDate;
         string Discoverer;
-        string IntiaoDescription;
+        string IntialDescription;
         string Component;
         string IssueStatusId;
     }
