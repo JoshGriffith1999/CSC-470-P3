@@ -9,6 +9,6 @@ namespace P3
     class IssueStatus
     {
         int ID;
-        string value;
+        string Value;
     }
 }
