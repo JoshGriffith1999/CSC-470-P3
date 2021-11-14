@@ -16,7 +16,7 @@ namespace P3
             status.ID = ID;
             status.Value = Value;
 
-            IssueStatuses.Add(IssueStatuses);
+            IssueStatuses.Add(status);
 
         }
         public List<IssueStatus> GetAll() {
@@ -25,19 +25,19 @@ namespace P3
         }
         public int GetIDByStatus(string value) {
 
-            foreach (int i in IssueStatuses) {
-                if (i.Values == value) {
+            foreach (IssueStatus i in IssueStatuses) {
+                if (i.Value == value) {
                     return i.ID;
                 }
             }
         }
         public string GetValueByID(int ID) {
-            foreach (int i in IssueStatuses)
+            foreach (IssueStatus i in IssueStatuses)
             {
                 if (i.ID == ID)
                 {
-                    return i.Values;
-                }
+                    return i.Value.ToString();
+                } 
             }
         }
     }

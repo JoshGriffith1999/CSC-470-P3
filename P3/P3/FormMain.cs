@@ -135,7 +135,7 @@ namespace P3
 
         private void recordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormRecordIssue recordIssue = new FormRecordIssue(IssueRepository, Issues);
+            FormRecordIssue recordIssue = new FormRecordIssue(IssueRepository, Issues, UserRepository);
             recordIssue.ShowDialog();
         }
     }

@@ -8,9 +8,12 @@ namespace P3
 {
     public class Issue
     {
-        public int ID;
-        public string Title;
-        public DateTime Date;
+        public int Id { get; set; }
+        public int ProjectId { get; set; }
+
+        public int IssueStatusID;
+        public string Title { get; set; }
+        public DateTime DiscoveryDate;
         public string Discoverer;
         public string InitialDescription;
         public string Component;
@@ -18,9 +21,9 @@ namespace P3
          
         public Issue(int inputID, string inputTitle, DateTime inputDate, string inputDiscoverer, string inputInitialDescription, string inputComponent, string inputStatus)
         {
-            ID = inputID;
+            Id = inputID;
             Title = inputTitle;
-            Date = inputDate;
+            DiscoveryDate = inputDate;
             Discoverer = inputDiscoverer;
             InitialDescription = inputInitialDescription;
             Component = inputComponent;

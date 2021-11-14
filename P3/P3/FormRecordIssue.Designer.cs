@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.TextBox InitialDescriptionTextBox;
             this.label1 = new System.Windows.Forms.Label();
             this.IDTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,13 +38,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.DiscovererCombo = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ComponentTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.CancelButton = new System.Windows.Forms.Button();
             this.CreateIssueButton = new System.Windows.Forms.Button();
+            InitialDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -90,9 +91,13 @@
             // 
             // DiscoveryTimeDate
             // 
+            this.DiscoveryTimeDate.AccessibleRole = System.Windows.Forms.AccessibleRole.ComboBox;
+            this.DiscoveryTimeDate.CustomFormat = "h\':\'m\':\'ss tt d, MMM yyyy";
+            this.DiscoveryTimeDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DiscoveryTimeDate.Location = new System.Drawing.Point(132, 105);
             this.DiscoveryTimeDate.MaxDate = new System.DateTime(2021, 11, 13, 0, 0, 0, 0);
             this.DiscoveryTimeDate.Name = "DiscoveryTimeDate";
+            this.DiscoveryTimeDate.RightToLeftLayout = true;
             this.DiscoveryTimeDate.Size = new System.Drawing.Size(371, 22);
             this.DiscoveryTimeDate.TabIndex = 5;
             this.DiscoveryTimeDate.Value = new System.DateTime(2021, 11, 13, 0, 0, 0, 0);
@@ -124,12 +129,12 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Component:";
             // 
-            // textBox1
+            // ComponentTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(131, 172);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(372, 22);
-            this.textBox1.TabIndex = 9;
+            this.ComponentTextBox.Location = new System.Drawing.Point(131, 172);
+            this.ComponentTextBox.Name = "ComponentTextBox";
+            this.ComponentTextBox.Size = new System.Drawing.Size(372, 22);
+            this.ComponentTextBox.TabIndex = 9;
             // 
             // label6
             // 
@@ -164,14 +169,14 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Initial Description";
             // 
-            // textBox2
+            // InitialDescriptionTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(132, 269);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(371, 233);
-            this.textBox2.TabIndex = 13;
+            InitialDescriptionTextBox.Location = new System.Drawing.Point(132, 269);
+            InitialDescriptionTextBox.Multiline = true;
+            InitialDescriptionTextBox.Name = "InitialDescriptionTextBox";
+            InitialDescriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            InitialDescriptionTextBox.Size = new System.Drawing.Size(371, 233);
+            InitialDescriptionTextBox.TabIndex = 13;
             // 
             // CancelButton
             // 
@@ -200,11 +205,11 @@
             this.ClientSize = new System.Drawing.Size(613, 620);
             this.Controls.Add(this.CreateIssueButton);
             this.Controls.Add(this.CancelButton);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(InitialDescriptionTextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ComponentTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.DiscovererCombo);
             this.Controls.Add(this.label4);
@@ -232,11 +237,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox DiscovererCombo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ComponentTextBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button CreateIssueButton;
     }

@@ -8,7 +8,7 @@ namespace P3
 {
     class IssueStatus
     {
-        int ID;
-        string Value;
+        public int ID;
+        public string Value;
     }
 }

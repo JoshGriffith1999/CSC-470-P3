@@ -10,6 +10,7 @@ namespace P3
     {
         string Add(Issue issue);
         List<Issue> GetAll(int ProjectID);
+        string Modify(int IssueID, Issue issue);
         bool Remove(Issue issue);
         int GetTotalNumberOfIssues(int ProjectID);
         List<string> GetIssuesByMonth(int ProjectID);

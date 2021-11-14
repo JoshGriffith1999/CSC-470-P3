@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P3
 {
-    class FakeIssueRepository : IIssueRepository
+    public class FakeIssueRepository : IIssueRepository
     {
         public string NO_ERROR = " ";
         public string EMPTY_TITLE_ERROR = "A title is required.";
@@ -15,11 +15,35 @@ namespace P3
         public string EMPTY_DISCOVERY_ERROR = "A discoverer is required";
 
         private List<Issue> Issues;
+        Issue IssueInUse = new Issue();
 
-
-        private string ValidateIssue(Issue issue);
-        private bool isDuplicate(string title);
-
+        private string ValidateIssue(Issue issue)
+        {
+            return "O";
+        }
+        public bool isDuplicateName(string IssueTitle)
+        {
+            bool checker = false;
+            foreach (Issue k in Issues)
+            {
+                if (k.Title == IssueTitle)
+                    checker = true;
+            }
+            return checker;
+        }
+        public int GetNextId()
+        {
+            int i = 0;
+            foreach (Issue k in Issues)
+            {
+                if (i < k.Id)
+                {
+                    i = k.Id;
+                }
+            }
+            i++;
+            return i;
+        }
         //////////////////////////////////////////////////////////////////
         public string Add(Issue issue) {
 
@@ -30,18 +54,7 @@ namespace P3
                 return EMPTY_TITLE_ERROR;
             }
             //checks for empty issue date
-            else if (issue.DiscoveryDate.To.ShortString == "")
-            {
-                return EMPTY_DISCOVERY_DATETIME_ERROR;
-            }
-
-            //checks for Future Issue Date from year
-            else if (issue.DiscoveryDate.Year > Today.Year)
-            {
-                return FUTURE_DISOVERY_DATETIME_ERROR;
-            }
-
-            else if (issue.DiscoveryDate.Month > Today.Month)
+            else if (issue.DiscoveryDate > DateTime.Now)
             {
                 return FUTURE_DISOVERY_DATETIME_ERROR;
             }
@@ -54,12 +67,12 @@ namespace P3
 
             //All Tests passed
             else {
-                issue.ID = Issues.Count + 1;
+                issue.Id = Issues.Count + 1;
                 Issues.Add(issue);
                 return NO_ERROR;
             }
         }
-        List<Issue> GetAll(int ProjectID) {
+        public List<Issue> GetAll(int ProjectID) {
             return Issues;
         }
         public bool Remove(Issue issue) {
@@ -67,7 +80,7 @@ namespace P3
 
             //Sees if issue passed in is actually in the repository
             //If so, sets inList to true
-            foreach (int i in Issues) {
+            foreach (Issue i in Issues) {
                 if (i.ProjectId == issue.ProjectId) {
                     inList = true;
                     break;
@@ -83,11 +96,15 @@ namespace P3
                 return inList;
             }
         }
+        public string Modify(int IssueID, Issue issue)
+        {
+            return "O";
+        }
         public int GetTotalNumberOfIssues(int ProjectID) {
 
             int numberOfIssues = 0;
-            foreach(int i in Issues) {
-                if (i.ProjectId == ProjectId)
+            foreach(Issue i in Issues) {
+                if (i.ProjectId == ProjectID)
                 {
                     numberOfIssues++;
                 }
@@ -98,29 +115,31 @@ namespace P3
         public List<string> GetIssuesByMonth(int ProjectID) {
             List<string> IssuesByMonth;
 
-            foreach (int i in Issues)
+            foreach (Issue i in Issues)
             {
-                if (i.ProjectId == ProjectId)
+                if (i.ProjectId == ProjectID)
                 {
-                    IssuesByDiscover.Add(i.DiscoveryDate.Month.ToString)
+                    IssuesByMonth.Add(i.DiscoveryDate.Month.ToString());
                 }
             }
+            return IssuesByMonth;
         }
         public List<string> GetIssueByDiscoverer(int ProjectID) {
 
-            List<string> IssuesByDiscover;
+            List<String> IssuesByDiscover;
 
-            foreach(int i in Issues) {
-                if (i.ProjectId == ProjectId)
+            foreach(Issue i in Issues) {
+                if (i.ProjectId == ProjectID)
                 {
-                    IssuesByDiscover.Add(i.Discoverer)
+                    
+                    IssuesByDiscover.Add(i.Discoverer);
                 }
             }
 
             return IssuesByDiscover;
         }
         public Issue GetUserByID(int ID) {
-            foreach(int i in Issues) {
+            foreach(Issue i in Issues) {
                 if (i.ProjectId == ID)
                 {
                     return i;
