@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Builder
+namespace P3
 {
     interface IIssueStatusRepository
     {
-        void Add(int ID, string Value);
-        List<IssueStatus> GetAll();
-        int GetIDByStatus(string value);
-        string GetValueByID(int ID);
+        string Add(Issue issue, int out_id);
+        string Remove(int IssueID);
+        string Modify(int IssueID, Issue issue);
+        List<Issue> GetAll();
+        bool IsDuplicateName(string IssueTitle);
     }
 }

@@ -95,28 +95,28 @@ namespace P3
             // selectProjectToolStripMenuItem
             // 
             this.selectProjectToolStripMenuItem.Name = "selectProjectToolStripMenuItem";
-            this.selectProjectToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.selectProjectToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.selectProjectToolStripMenuItem.Text = "Select Project";
             this.selectProjectToolStripMenuItem.Click += new System.EventHandler(this.selectProjectToolStripMenuItem_Click);
             // 
             // createProjectToolStripMenuItem
             // 
             this.createProjectToolStripMenuItem.Name = "createProjectToolStripMenuItem";
-            this.createProjectToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.createProjectToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.createProjectToolStripMenuItem.Text = "Create Project";
             this.createProjectToolStripMenuItem.Click += new System.EventHandler(this.createProjectToolStripMenuItem_Click);
             // 
             // modifyProjectToolStripMenuItem
             // 
             this.modifyProjectToolStripMenuItem.Name = "modifyProjectToolStripMenuItem";
-            this.modifyProjectToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.modifyProjectToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.modifyProjectToolStripMenuItem.Text = "Modify Project";
             this.modifyProjectToolStripMenuItem.Click += new System.EventHandler(this.modifyProjectToolStripMenuItem_Click);
             // 
             // removeProjectToolStripMenuItem
             // 
             this.removeProjectToolStripMenuItem.Name = "removeProjectToolStripMenuItem";
-            this.removeProjectToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.removeProjectToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.removeProjectToolStripMenuItem.Text = "Remove Project";
             this.removeProjectToolStripMenuItem.Click += new System.EventHandler(this.removeProjectToolStripMenuItem_Click);
             // 
@@ -135,25 +135,26 @@ namespace P3
             // dashboardToolStripMenuItem
             // 
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dashboardToolStripMenuItem.Text = "Dashboard";
             // 
             // recordToolStripMenuItem
             // 
             this.recordToolStripMenuItem.Name = "recordToolStripMenuItem";
-            this.recordToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.recordToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.recordToolStripMenuItem.Text = "Record";
+            this.recordToolStripMenuItem.Click += new System.EventHandler(this.recordToolStripMenuItem_Click);
             // 
             // modifyToolStripMenuItem
             // 
             this.modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
-            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.modifyToolStripMenuItem.Text = "Modify";
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.removeToolStripMenuItem.Text = "Remove";
             // 
             // reportToolStripMenuItem
@@ -167,7 +168,7 @@ namespace P3
             this.listByDateRangeToolStripMenuItem,
             this.trendByDateRangeToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.reportToolStripMenuItem.Text = "Report";
             // 
             // countByAssigneeToolStripMenuItem

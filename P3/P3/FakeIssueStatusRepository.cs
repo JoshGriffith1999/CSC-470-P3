@@ -4,15 +4,53 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Builder
+namespace P3
 {
-    class FakeIssueStatusRepository : IIssueStatusRepository
+    public class FakeIssueStatusRepository : IIssueStatusRepository
     {
-        private List<IssueStatus> IssueStatuses;
-        /////////////////////////////////////
-        void Add(int ID, string Value);
-        List<IssueStatus> GetAll();
-        int GetIDByStatus(string value);
-        string GetValueByID(int ID);
+
+        private static List<Issue> Issues = new List<Issue>();
+
+        public string Add(Issue issue, int out_id)
+        {
+            return "O";
+        }
+        public string Remove(int IssueID)
+        {
+            return "O";
+        }
+        public string Modify(int IssueID, Issue issue)
+        {
+            return "O";
+        }
+        public List<Issue> GetAll()
+        {
+            return Issues;
+        }
+        public bool IsDuplicateName(string IssueTitle)
+        {
+            bool checker = false;
+            foreach (Issue k in Issues)
+            {
+                if (k.Title == IssueTitle)
+                    checker = true;
+            }
+            return checker;
+        }
+        public int GetNextId()
+        {
+            int i = 0;
+            foreach (Issue k in Issues)
+            {
+                if (i < k.ID)
+                {
+                    i = k.ID;
+                }
+            }
+            i++;
+            return i;
+        }
+
     }
+
 }

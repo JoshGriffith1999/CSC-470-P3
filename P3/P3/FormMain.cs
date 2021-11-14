@@ -14,10 +14,13 @@ namespace P3
     {
         FakeAppUserRepository UserRepository = new FakeAppUserRepository();
         FakeProjectRepository ProjectRepository = new FakeProjectRepository();
+        FakeIssueStatusRepository IssueRepository = new FakeIssueStatusRepository();
+        Issue IssueInUse = new Issue();
         Project ProjectInUse = new Project();
         
         private AppUser User = new AppUser();
         private List<Project> Projects = new List<Project>();
+        private List<Issue> Issues = new List<Issue>();
        
         DialogResult result = DialogResult.None;
         public FormMain()
@@ -128,6 +131,12 @@ namespace P3
             ProjectRepository = removeProject.returnRepo();
             this.Projects = ProjectRepository.GetAll();
 
+        }
+
+        private void recordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRecordIssue recordIssue = new FormRecordIssue(IssueRepository, Issues);
+            recordIssue.ShowDialog();
         }
     }
 }

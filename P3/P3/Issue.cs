@@ -6,15 +6,26 @@ using System.Threading.Tasks;
 
 namespace P3
 {
-    class Issue
+    public class Issue
     {
-        int ID;
-        int ProjectId;
-        string Title;
-        DateTime DiscoveryDate;
-        string Discoverer;
-        string IntialDescription;
-        string Component;
-        string IssueStatusId;
+        public int ID;
+        public string Title;
+        public DateTime Date;
+        public string Discoverer;
+        public string InitialDescription;
+        public string Component;
+        public string Status;
+         
+        public Issue(int inputID, string inputTitle, DateTime inputDate, string inputDiscoverer, string inputInitialDescription, string inputComponent, string inputStatus)
+        {
+            ID = inputID;
+            Title = inputTitle;
+            Date = inputDate;
+            Discoverer = inputDiscoverer;
+            InitialDescription = inputInitialDescription;
+            Component = inputComponent;
+            Status = inputStatus;
+        }
+        public Issue() { }
     }
 }
