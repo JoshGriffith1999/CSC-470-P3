@@ -53,6 +53,12 @@
     <Compile Include="FormModifyProject.Designer.cs">
       <DependentUpon>FormModifyProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRecordIssue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRecordIssue.Designer.cs">
+      <DependentUpon>FormRecordIssue.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRemoveProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormModifyProject.resx">
       <DependentUpon>FormModifyProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRecordIssue.resx">
+      <DependentUpon>FormRecordIssue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRemoveProject.resx">
       <DependentUpon>FormRemoveProject.cs</DependentUpon>
