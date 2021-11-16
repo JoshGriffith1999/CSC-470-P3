@@ -49,7 +49,7 @@ namespace P3
             createdIssue.DiscoveryDate = DiscoveryTimeDate.Value;
             createdIssue.Discoverer = DiscovererCombo.SelectedItem.ToString().Trim();
             createdIssue.Component = ComponentTextBox.Text.Trim();
-            createdIssue.InitialDescription = InitialDescriptionTextBox;
+            createdIssue.InitialDescription = InitialDescriptionTextBox.Text.Trim();
             FakeIssueRepository fir = new FakeIssueRepository();
             string result = fir.Add(createdIssue);
             if(result != fir.NO_ERROR)
@@ -78,7 +78,7 @@ namespace P3
 
         }
 
-        private void InitialDescriptionTextBox_TextChanged(object sender, EventArgs e)
+        private void InitialDescriptionTextBox_TextChanged_1(object sender, EventArgs e)
         {
 
         }

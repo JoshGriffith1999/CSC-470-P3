@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TextBox InitialDescriptionTextBox;
             this.label1 = new System.Windows.Forms.Label();
             this.IDTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,18 +43,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.CancelButton = new System.Windows.Forms.Button();
             this.CreateIssueButton = new System.Windows.Forms.Button();
-            InitialDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.InitialDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // InitialDescriptionTextBox
-            // 
-            InitialDescriptionTextBox.Location = new System.Drawing.Point(132, 269);
-            InitialDescriptionTextBox.Multiline = true;
-            InitialDescriptionTextBox.Name = "InitialDescriptionTextBox";
-            InitialDescriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            InitialDescriptionTextBox.Size = new System.Drawing.Size(371, 233);
-            InitialDescriptionTextBox.TabIndex = 13;
-            InitialDescriptionTextBox.TextChanged += new System.EventHandler(this.InitialDescriptionTextBox_TextChanged);
             // 
             // label1
             // 
@@ -199,12 +188,22 @@
             this.CreateIssueButton.UseVisualStyleBackColor = true;
             this.CreateIssueButton.Click += new System.EventHandler(this.CreateIssueButton_Click);
             // 
+            // InitialDescriptionTextBox
+            // 
+            this.InitialDescriptionTextBox.Location = new System.Drawing.Point(131, 269);
+            this.InitialDescriptionTextBox.Multiline = true;
+            this.InitialDescriptionTextBox.Name = "InitialDescriptionTextBox";
+            this.InitialDescriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.InitialDescriptionTextBox.Size = new System.Drawing.Size(372, 242);
+            this.InitialDescriptionTextBox.TabIndex = 16;
+            this.InitialDescriptionTextBox.TextChanged += new System.EventHandler(this.InitialDescriptionTextBox_TextChanged_1);
+            // 
             // FormRecordIssue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 620);
-            this.Controls.Add(InitialDescriptionTextBox);
+            this.Controls.Add(this.InitialDescriptionTextBox);
             this.Controls.Add(this.CreateIssueButton);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.label7);
@@ -244,5 +243,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button CreateIssueButton;
+        private System.Windows.Forms.TextBox InitialDescriptionTextBox;
     }
 }
