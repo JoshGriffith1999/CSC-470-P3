@@ -128,6 +128,8 @@ namespace P3
             List<string> IssuesByMonth = new List<string>();
             //YEAR - MONTH - AMOUNT IN THAT TIME
             List<Issue> ValidIssues = new List<Issue>();
+            int[] monthYearCount= new int[24];
+            
             foreach (Issue i in Issues)
             {
                 if (i.ProjectId == ProjectID)
@@ -135,21 +137,40 @@ namespace P3
                     ValidIssues.Add(i);
                 }
             }
+           
+            int yearChecker = DateTime.Today.Year;
+            int tester = -1;
             foreach (Issue i in ValidIssues)
             {
-
+                tester = yearChecker - i.DiscoveryDate.Year ;//This determines if it goes in the first 12 or second
+                monthYearCount[((tester*12)+i.DiscoveryDate.Month)]++;
+            }
+            foreach (int i in monthYearCount)
+            {
+                if (monthYearCount[i] > 0)
+                {
+                    IssuesByMonth.Add((yearChecker-(i/12)).ToString()+ " " + ((i % 12)).ToString() + " " + monthYearCount[i]);
+                }
             }
             return IssuesByMonth;
         }
         public List<string> GetIssueByDiscoverer(int ProjectID) {
 
             List<String> IssuesByDiscover = new List<string>();
-
+            int[] discovererCount = new int[100];
+            string[] discovererCountTracker = new string[100];
+            int dct = 0;
             foreach(Issue i in Issues) {
                 if (i.ProjectId == ProjectID)
                 {
                     
-                    IssuesByDiscover.Add(i.Discoverer);
+                        foreach(string k in discovererCountTracker)
+                        {
+                            discovererCountTracker[dct] = i.Discoverer;
+                            discovererCount[dct]++;
+                            dct++;
+                        }
+
                 }
             }
 

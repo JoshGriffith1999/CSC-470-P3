@@ -23,6 +23,17 @@ namespace P3
             
             int totalIssues = IssueRepo.GetTotalNumberOfIssues(ProjectInUse.ID);
             labelTotalNumberofIssues.Text = totalIssues.ToString();
+            foreach(string i in IssueRepo.GetIssuesByMonth(ProjectInUse.ID))
+            {
+                IssuesByMonthTextBox.AppendText(i);
+                IssuesByMonthTextBox.AppendText(Environment.NewLine);
+            }
+            foreach (string i in IssueRepo.GetIssueByDiscoverer(ProjectInUse.ID))
+            {
+                IssuesByDiscovererTextBox.AppendText(i);
+                IssuesByDiscovererTextBox.AppendText(Environment.NewLine);
+            }
+
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
