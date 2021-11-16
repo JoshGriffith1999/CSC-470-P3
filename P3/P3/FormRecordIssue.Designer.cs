@@ -77,7 +77,7 @@
             this.TitleTextBox.Location = new System.Drawing.Point(132, 73);
             this.TitleTextBox.Name = "TitleTextBox";
             this.TitleTextBox.Size = new System.Drawing.Size(371, 22);
-            this.TitleTextBox.TabIndex = 3;
+            this.TitleTextBox.TabIndex = 2;
             // 
             // label3
             // 
@@ -98,7 +98,7 @@
             this.DiscoveryTimeDate.Name = "DiscoveryTimeDate";
             this.DiscoveryTimeDate.RightToLeftLayout = true;
             this.DiscoveryTimeDate.Size = new System.Drawing.Size(371, 22);
-            this.DiscoveryTimeDate.TabIndex = 5;
+            this.DiscoveryTimeDate.TabIndex = 3;
             this.DiscoveryTimeDate.Value = new System.DateTime(2021, 11, 13, 0, 0, 0, 0);
             this.DiscoveryTimeDate.ValueChanged += new System.EventHandler(this.DiscoveryTimeDate_ValueChanged);
             // 
@@ -117,7 +117,7 @@
             this.DiscovererCombo.Location = new System.Drawing.Point(131, 137);
             this.DiscovererCombo.Name = "DiscovererCombo";
             this.DiscovererCombo.Size = new System.Drawing.Size(371, 24);
-            this.DiscovererCombo.TabIndex = 7;
+            this.DiscovererCombo.TabIndex = 4;
             // 
             // label5
             // 
@@ -133,7 +133,7 @@
             this.ComponentTextBox.Location = new System.Drawing.Point(131, 172);
             this.ComponentTextBox.Name = "ComponentTextBox";
             this.ComponentTextBox.Size = new System.Drawing.Size(372, 22);
-            this.ComponentTextBox.TabIndex = 9;
+            this.ComponentTextBox.TabIndex = 5;
             // 
             // label6
             // 
@@ -157,7 +157,7 @@
             this.comboBox1.Location = new System.Drawing.Point(131, 209);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(372, 24);
-            this.comboBox1.TabIndex = 11;
+            this.comboBox1.TabIndex = 6;
             // 
             // label7
             // 
@@ -173,7 +173,7 @@
             this.CancelButton.Location = new System.Drawing.Point(235, 532);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(109, 29);
-            this.CancelButton.TabIndex = 14;
+            this.CancelButton.TabIndex = 8;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
@@ -183,7 +183,7 @@
             this.CreateIssueButton.Location = new System.Drawing.Point(379, 532);
             this.CreateIssueButton.Name = "CreateIssueButton";
             this.CreateIssueButton.Size = new System.Drawing.Size(124, 29);
-            this.CreateIssueButton.TabIndex = 15;
+            this.CreateIssueButton.TabIndex = 9;
             this.CreateIssueButton.Text = "Create Issue";
             this.CreateIssueButton.UseVisualStyleBackColor = true;
             this.CreateIssueButton.Click += new System.EventHandler(this.CreateIssueButton_Click);
@@ -195,7 +195,7 @@
             this.InitialDescriptionTextBox.Name = "InitialDescriptionTextBox";
             this.InitialDescriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.InitialDescriptionTextBox.Size = new System.Drawing.Size(372, 242);
-            this.InitialDescriptionTextBox.TabIndex = 16;
+            this.InitialDescriptionTextBox.TabIndex = 7;
             this.InitialDescriptionTextBox.TextChanged += new System.EventHandler(this.InitialDescriptionTextBox_TextChanged_1);
             // 
             // FormRecordIssue

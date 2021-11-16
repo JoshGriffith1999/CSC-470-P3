@@ -128,23 +128,16 @@ namespace P3
             List<string> IssuesByMonth = new List<string>();
             //YEAR - MONTH - AMOUNT IN THAT TIME
             List<Issue> ValidIssues = new List<Issue>();
-            int[] monthYearCount= new int[24];
-            /*
-             
-             
-             
-            */
-
-
+            int[] monthYearCount= new int[200];
+            
             foreach(Issue i in Issues)
             {
                 if (ProjectID == i.ProjectId) 
                 {
-                    if ((DateTime.Now-i.DiscoveryDate).TotalDays < 367)
-                    {
+                    
                         ValidIssues.Add(i);
                         monthYearCount[(i.DiscoveryDate.Month-1)+((DateTime.Now.Year-i.DiscoveryDate.Year)*12)]++;
-                    }
+                    
                 }
             }
             int j = 0;
@@ -158,7 +151,7 @@ namespace P3
                     }
                     else
                     {
-                        IssuesByMonth.Add((DateTime.Now.Year-1).ToString() + " - " + ((j + 1)-12).ToString() + " - " + monthYearCount[j].ToString());
+                        IssuesByMonth.Add((DateTime.Now.Year-(j/12)).ToString() + " - " + (((j%12) + 1)).ToString() + " - " + monthYearCount[j].ToString());
                     }
                 }
                 j++;
