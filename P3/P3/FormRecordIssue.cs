@@ -67,6 +67,7 @@ namespace P3
             else
             {
                 MessageBox.Show("Issue added.");
+                MessageBox.Show(createdIssue.Title + "  " + createdIssue.ProjectId);
                 this.Hide();
                 this.DialogResult = DialogResult.OK;
             }

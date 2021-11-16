@@ -140,5 +140,11 @@ namespace P3
             FormRecordIssue recordIssue = new FormRecordIssue(IssueRepository, Issues, UserRepository, ProjectInUse.ID,users);
             recordIssue.ShowDialog();
         }
+
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormIssueStatus recordIssue = new FormIssueStatus(IssueRepository, ProjectInUse);
+            recordIssue.ShowDialog();
+        }
     }
 }
