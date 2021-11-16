@@ -47,6 +47,16 @@
             InitialDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
+            // InitialDescriptionTextBox
+            // 
+            InitialDescriptionTextBox.Location = new System.Drawing.Point(132, 269);
+            InitialDescriptionTextBox.Multiline = true;
+            InitialDescriptionTextBox.Name = "InitialDescriptionTextBox";
+            InitialDescriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            InitialDescriptionTextBox.Size = new System.Drawing.Size(371, 233);
+            InitialDescriptionTextBox.TabIndex = 13;
+            InitialDescriptionTextBox.TextChanged += new System.EventHandler(this.InitialDescriptionTextBox_TextChanged);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -169,15 +179,6 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Initial Description";
             // 
-            // InitialDescriptionTextBox
-            // 
-            InitialDescriptionTextBox.Location = new System.Drawing.Point(132, 269);
-            InitialDescriptionTextBox.Multiline = true;
-            InitialDescriptionTextBox.Name = "InitialDescriptionTextBox";
-            InitialDescriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            InitialDescriptionTextBox.Size = new System.Drawing.Size(371, 233);
-            InitialDescriptionTextBox.TabIndex = 13;
-            // 
             // CancelButton
             // 
             this.CancelButton.Location = new System.Drawing.Point(235, 532);
@@ -203,9 +204,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 620);
+            this.Controls.Add(InitialDescriptionTextBox);
             this.Controls.Add(this.CreateIssueButton);
             this.Controls.Add(this.CancelButton);
-            this.Controls.Add(InitialDescriptionTextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label6);

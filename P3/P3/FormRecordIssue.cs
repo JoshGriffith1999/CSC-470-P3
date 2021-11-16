@@ -14,7 +14,7 @@ namespace P3
     {
         FakeIssueRepository IssueRepo = new FakeIssueRepository();
         Issue IssueInUse = new Issue();
-
+        int ProjectId;
             public FormRecordIssue()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace P3
             TitleTextBox.Focus();
         }
 
-        public FormRecordIssue(FakeIssueRepository I, List<Issue> Issues, FakeAppUserRepository Users)
+        public FormRecordIssue(FakeIssueRepository I, List<Issue> Issues, FakeAppUserRepository Users, int PId)
         {
             InitializeComponent();
             CenterToScreen();
@@ -33,7 +33,7 @@ namespace P3
             {
                 DiscovererCombo.Items.Add(user.LastName + "," +user.FirstName);
             }
-            
+            ProjectId = PId;
             
             IDTextBox.Text = (I.GetNextId()).ToString();
             this.ActiveControl = TitleTextBox;
@@ -49,7 +49,7 @@ namespace P3
             createdIssue.DiscoveryDate = DiscoveryTimeDate.Value;
             createdIssue.Discoverer = DiscovererCombo.SelectedItem.ToString().Trim();
             createdIssue.Component = ComponentTextBox.Text.Trim();
-            createdIssue.InitialDescription = InitialDescriptionTextBox.Text.Trim();
+            createdIssue.InitialDescription = InitialDescriptionTextBox;
             FakeIssueRepository fir = new FakeIssueRepository();
             string result = fir.Add(createdIssue);
             if(result != fir.NO_ERROR)
@@ -74,6 +74,11 @@ namespace P3
         }
 
         private void DiscoveryTimeDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InitialDescriptionTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -14,7 +14,7 @@ namespace P3
     {
         FakeAppUserRepository UserRepository = new FakeAppUserRepository();
         FakeProjectRepository ProjectRepository = new FakeProjectRepository();
-        FakeIssueStatusRepository IssueRepository = new FakeIssueStatusRepository();
+        FakeIssueRepository IssueRepository = new FakeIssueRepository();
         Issue IssueInUse = new Issue();
         Project ProjectInUse = new Project();
         
@@ -135,7 +135,7 @@ namespace P3
 
         private void recordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormRecordIssue recordIssue = new FormRecordIssue(IssueRepository, Issues, UserRepository);
+            FormRecordIssue recordIssue = new FormRecordIssue(IssueRepository, Issues, UserRepository, ProjectInUse.ID);
             recordIssue.ShowDialog();
         }
     }

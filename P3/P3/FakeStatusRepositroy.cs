@@ -30,6 +30,8 @@ namespace P3
                     return i.ID;
                 }
             }
+            //NOT SURE IF THIS IS CORRECT
+            return -1;
         }
         public string GetValueByID(int ID) {
             foreach (IssueStatus i in IssueStatuses)
@@ -39,6 +41,7 @@ namespace P3
                     return i.Value.ToString();
                 } 
             }
+            return "ERROR GetValByID";
         }
     }
 }
