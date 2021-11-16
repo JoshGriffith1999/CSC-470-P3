@@ -15,8 +15,6 @@ namespace P3
         FakeIssueRepository IssueRepo = new FakeIssueRepository();
         Issue IssueInUse = new Issue();
 
-        
-
             public FormRecordIssue()
         {
             InitializeComponent();
@@ -52,40 +50,21 @@ namespace P3
             createdIssue.Discoverer = DiscovererCombo.SelectedItem.ToString().Trim();
             createdIssue.Component = ComponentTextBox.Text.Trim();
             createdIssue.InitialDescription = InitialDescriptionTextBox.Text.Trim();
-            
-            if (TitleTextBox.TextLength != 0)
+            FakeIssueRepository fir = new FakeIssueRepository();
+            string result = fir.Add(createdIssue);
+            if(result != fir.NO_ERROR)
             {
-                bool checker;
-                checker = IssueRepo.IsDuplicateName(TitleTextBox.Text);
-                if (checker == true)
-                {
-                    MessageBox.Show("Issue title must be unique.");
-                }
-                else
-                {
-                    if (DiscoveryTimeDate.Value <= DateTime.Now)
-                    {
-                        if (DiscovererCombo.SelectedItem != null)
-                        {
-                            
-                            this.Hide();
-                            this.DialogResult = DialogResult.OK;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Issue must contain a discoverer.");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Time and Date must be in the past or present.");
-                    }
-                }
+                MessageBox.Show(result, "Attention");
             }
             else
             {
-                MessageBox.Show("Issue must contain a title.");
+                MessageBox.Show("Issue added.");
+                this.Hide();
+                this.DialogResult = DialogResult.OK;
             }
+            
+              
+            
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

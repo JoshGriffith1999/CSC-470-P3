@@ -13,8 +13,10 @@ namespace P3
         public string EMPTY_DISCOVERY_DATETIME_ERROR = "Must select a discovery Date/TIme";
         public string FUTURE_DISOVERY_DATETIME_ERROR = "Issue can't be from the future";
         public string EMPTY_DISCOVERY_ERROR = "A discoverer is required";
+        public string DUPLICATE_TITLE_ERROR = "Issue title must be unique.";
 
-        private List<Issue> Issues;
+        FakeIssueRepository IssueRepo = new FakeIssueRepository();
+        private List<Issue> Issues = new List<Issue>();
         Issue IssueInUse = new Issue();
 
         private string ValidateIssue(Issue issue)
@@ -46,25 +48,29 @@ namespace P3
         }
         //////////////////////////////////////////////////////////////////
         public string Add(Issue issue) {
-
             DateTime Today = DateTime.Today;
             //Checks for empty Issue Title
             if (issue.Title == "")
             {
                 return EMPTY_TITLE_ERROR;
             }
-            //checks for empty issue date
+            //Checks for duplicate Issue Title
+            bool checker;
+            checker = IssueRepo.isDuplicateName(issue.Title);
+            if (checker == true)
+            {
+                return DUPLICATE_TITLE_ERROR;
+            }
+            //checks for future issue date
             else if (issue.DiscoveryDate > DateTime.Now)
             {
                 return FUTURE_DISOVERY_DATETIME_ERROR;
             }
-
             //Checks if a discoverer was added
             else if (issue.Discoverer == "")
             {
                 return EMPTY_DISCOVERY_ERROR;
             }
-
             //All Tests passed
             else {
                 issue.Id = Issues.Count + 1;
@@ -113,7 +119,7 @@ namespace P3
             return numberOfIssues;
         }
         public List<string> GetIssuesByMonth(int ProjectID) {
-            List<string> IssuesByMonth;
+            List<string> IssuesByMonth = new List<string>();
 
             foreach (Issue i in Issues)
             {
@@ -126,7 +132,7 @@ namespace P3
         }
         public List<string> GetIssueByDiscoverer(int ProjectID) {
 
-            List<String> IssuesByDiscover;
+            List<String> IssuesByDiscover = new List<string>();
 
             foreach(Issue i in Issues) {
                 if (i.ProjectId == ProjectID)
@@ -145,6 +151,8 @@ namespace P3
                     return i;
                 }
             }
+            Issue k = new Issue();
+            return k;
         }
     }
 }
