@@ -129,50 +129,91 @@ namespace P3
             //YEAR - MONTH - AMOUNT IN THAT TIME
             List<Issue> ValidIssues = new List<Issue>();
             int[] monthYearCount= new int[24];
-            
-            foreach (Issue i in Issues)
+            /*
+             
+             
+             
+            */
+
+
+            foreach(Issue i in Issues)
             {
-                if (i.ProjectId == ProjectID)
+                if (ProjectID == i.ProjectId) 
                 {
-                    ValidIssues.Add(i);
+                    if ((DateTime.Now-i.DiscoveryDate).TotalDays < 367)
+                    {
+                        ValidIssues.Add(i);
+                        monthYearCount[(i.DiscoveryDate.Month-1)+((DateTime.Now.Year-i.DiscoveryDate.Year)*12)]++;
+                    }
                 }
             }
-           
-            int yearChecker = DateTime.Today.Year;
-            int tester = -1;
-            foreach (Issue i in ValidIssues)
-            {
-                tester = yearChecker - i.DiscoveryDate.Year ;//This determines if it goes in the first 12 or second
-                monthYearCount[((tester*12)+i.DiscoveryDate.Month)]++;
-            }
+            int j = 0;
             foreach (int i in monthYearCount)
             {
-                if (monthYearCount[i] > 0)
+                if (monthYearCount[j] > 0)
                 {
-                    IssuesByMonth.Add((yearChecker-(i/12)).ToString()+ " " + ((i % 12)).ToString() + " " + monthYearCount[i]);
+                    if (j < 13)
+                    {
+                        IssuesByMonth.Add(DateTime.Now.Year.ToString() + " - " + (j + 1).ToString() + " - " + monthYearCount[j].ToString());
+                    }
+                    else
+                    {
+                        IssuesByMonth.Add((DateTime.Now.Year-1).ToString() + " - " + ((j + 1)-12).ToString() + " - " + monthYearCount[j].ToString());
+                    }
                 }
+                j++;
             }
+           
+           
             return IssuesByMonth;
         }
+        //GetIssueByDiscoverer is working perfectly!
         public List<string> GetIssueByDiscoverer(int ProjectID) {
 
             List<String> IssuesByDiscover = new List<string>();
             int[] discovererCount = new int[100];
             string[] discovererCountTracker = new string[100];
             int dct = 0;
+            int j = 0;
+            bool test = false;
             foreach(Issue i in Issues) {
                 if (i.ProjectId == ProjectID)
                 {
-                    
-                        foreach(string k in discovererCountTracker)
-                        {
-                            discovererCountTracker[dct] = i.Discoverer;
-                            discovererCount[dct]++;
-                            dct++;
-                        }
 
+                    if (dct > 0)
+                    {
+                        foreach (string k in discovererCountTracker)
+                        {
+                            if (k == i.Discoverer)
+                            {
+                                discovererCount[j]++;
+                                test = true;
+                            }
+                            j++;
+                        }
+                        j = 0;
+                    }
+                    else if (test == false)
+                    {
+                        discovererCountTracker[dct] = i.Discoverer;
+                        discovererCount[dct]++;
+                        dct++;
+                    }
+                    test = false;
                 }
             }
+
+            foreach (string k in discovererCountTracker)
+            {
+                //Discoverer - count
+                if (k != null)
+                {
+                    IssuesByDiscover.Add(k + " - " + discovererCount[j]);
+                }
+            }
+            j = 0;
+
+
 
             return IssuesByDiscover;
         }
