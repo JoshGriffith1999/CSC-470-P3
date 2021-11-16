@@ -15,13 +15,30 @@ namespace P3
         public string EMPTY_DISCOVERY_ERROR = "A discoverer is required";
         public string DUPLICATE_TITLE_ERROR = "Issue title must be unique.";
 
-        FakeIssueRepository IssueRepo = new FakeIssueRepository();
+        
         private List<Issue> Issues = new List<Issue>();
         Issue IssueInUse = new Issue();
 
         private string ValidateIssue(Issue issue)
         {
-            return "O";
+            string title = issue.Title.Trim();
+            if (title == "")
+            {
+                return EMPTY_TITLE_ERROR;
+            }
+            if (issue.DiscoveryDate == default(DateTime))
+            {
+                return EMPTY_DISCOVERY_DATETIME_ERROR;
+            }
+            if (issue.DiscoveryDate > DateTime.Now)
+            {
+                return FUTURE_DISOVERY_DATETIME_ERROR;
+            }
+            if (issue.Discoverer == null || issue.Discoverer == "")
+            {
+                return EMPTY_DISCOVERY_ERROR;
+            }
+            return NO_ERROR;
         }
         public bool isDuplicateName(string IssueTitle)
         {
@@ -48,34 +65,17 @@ namespace P3
         }
         //////////////////////////////////////////////////////////////////
         public string Add(Issue issue) {
-            DateTime Today = DateTime.Today;
-            //Checks for empty Issue Title
-            if (issue.Title == "")
-            {
-                return EMPTY_TITLE_ERROR;
-            }
-            //Checks for duplicate Issue Title
-            bool checker;
-            checker = IssueRepo.isDuplicateName(issue.Title);
-            if (checker == true)
-            {
-                return DUPLICATE_TITLE_ERROR;
-            }
-            //checks for future issue date
-            else if (issue.DiscoveryDate > DateTime.Now)
-            {
-                return FUTURE_DISOVERY_DATETIME_ERROR;
-            }
-            //Checks if a discoverer was added
-            else if (issue.Discoverer == "")
-            {
-                return EMPTY_DISCOVERY_ERROR;
-            }
-            //All Tests passed
-            else {
+
+            string validation = this.ValidateIssue(issue);
+            if (validation == NO_ERROR) {
+
                 issue.Id = Issues.Count + 1;
                 Issues.Add(issue);
                 return NO_ERROR;
+            }
+            else
+            {
+                return validation;
             }
         }
         public List<Issue> GetAll(int ProjectID) {

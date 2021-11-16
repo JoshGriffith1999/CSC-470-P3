@@ -23,11 +23,11 @@ namespace P3
             TitleTextBox.Focus();
         }
 
-        public FormRecordIssue(FakeIssueRepository I, List<Issue> Issues, FakeAppUserRepository Users, int PId)
+        public FormRecordIssue(FakeIssueRepository I, List<Issue> Issues, FakeAppUserRepository Users, int PId, List<AppUser> users)
         {
             InitializeComponent();
             CenterToScreen();
-            List<AppUser> users = new List<AppUser>();
+            
             users = Users.GetALL();
             foreach (AppUser user in users)
             {
@@ -47,7 +47,15 @@ namespace P3
             createdIssue.Id = Int32.Parse(IDTextBox.Text.Trim());
             createdIssue.Title = TitleTextBox.Text.Trim();
             createdIssue.DiscoveryDate = DiscoveryTimeDate.Value;
+            var Discoverertester = DiscovererCombo.SelectedItem;
+            if( Discoverertester == null)
+            {
+            }
+            else 
+            { 
             createdIssue.Discoverer = DiscovererCombo.SelectedItem.ToString().Trim();
+            }
+           
             createdIssue.Component = ComponentTextBox.Text.Trim();
             createdIssue.InitialDescription = InitialDescriptionTextBox.Text.Trim();
             FakeIssueRepository fir = new FakeIssueRepository();

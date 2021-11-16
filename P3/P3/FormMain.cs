@@ -21,6 +21,7 @@ namespace P3
         private AppUser User = new AppUser();
         private List<Project> Projects = new List<Project>();
         private List<Issue> Issues = new List<Issue>();
+        private List<AppUser> users = new List<AppUser>();
        
         DialogResult result = DialogResult.None;
         public FormMain()
@@ -135,7 +136,8 @@ namespace P3
 
         private void recordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormRecordIssue recordIssue = new FormRecordIssue(IssueRepository, Issues, UserRepository, ProjectInUse.ID);
+            users = UserRepository.GetALL();
+            FormRecordIssue recordIssue = new FormRecordIssue(IssueRepository, Issues, UserRepository, ProjectInUse.ID,users);
             recordIssue.ShowDialog();
         }
     }
