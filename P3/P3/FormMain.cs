@@ -139,11 +139,16 @@ namespace P3
             users = UserRepository.GetALL();
             FormRecordIssue recordIssue = new FormRecordIssue(IssueRepository, Issues, UserRepository, ProjectInUse.ID,users);
             recordIssue.ShowDialog();
+            IssueRepository = recordIssue.GetIssueRepo();
+            Issues = IssueRepository.GetAll(ProjectInUse.ID);
+            
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormIssueStatus recordIssue = new FormIssueStatus(IssueRepository, ProjectInUse);
+            
+            Issues = IssueRepository.GetAll(ProjectInUse.ID);
+            FormIssueStatus recordIssue = new FormIssueStatus(IssueRepository, ProjectInUse,Issues);
             recordIssue.ShowDialog();
         }
     }

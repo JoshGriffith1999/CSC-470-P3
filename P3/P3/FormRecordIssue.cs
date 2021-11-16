@@ -14,6 +14,7 @@ namespace P3
     {
         FakeIssueRepository IssueRepo = new FakeIssueRepository();
         Issue IssueInUse = new Issue();
+        
         int ProjectId;
             public FormRecordIssue()
         {
@@ -27,7 +28,8 @@ namespace P3
         {
             InitializeComponent();
             CenterToScreen();
-            
+            IssueRepo =I;
+
             users = Users.GetALL();
             foreach (AppUser user in users)
             {
@@ -45,6 +47,7 @@ namespace P3
             Issue createdIssue = new Issue();
             createdIssue.ProjectId = ProjectId;
             createdIssue.Id = Int32.Parse(IDTextBox.Text.Trim());
+            
             createdIssue.Title = TitleTextBox.Text.Trim();
             createdIssue.DiscoveryDate = DiscoveryTimeDate.Value;
             var Discoverertester = DiscovererCombo.SelectedItem;
@@ -58,16 +61,16 @@ namespace P3
            
             createdIssue.Component = ComponentTextBox.Text.Trim();
             createdIssue.InitialDescription = InitialDescriptionTextBox.Text.Trim();
-            FakeIssueRepository fir = new FakeIssueRepository();
-            string result = fir.Add(createdIssue);
-            if(result != fir.NO_ERROR)
+            
+            string result = IssueRepo.Add(createdIssue);
+            if(result != IssueRepo.NO_ERROR)
             {
                 MessageBox.Show(result, "Attention");
             }
             else
             {
                 MessageBox.Show("Issue added.");
-                MessageBox.Show(createdIssue.Title + "  " + createdIssue.ProjectId);
+               
                 this.Hide();
                 this.DialogResult = DialogResult.OK;
             }
@@ -79,7 +82,7 @@ namespace P3
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-            this.Hide();
+            this.Close();
         }
 
         private void DiscoveryTimeDate_ValueChanged(object sender, EventArgs e)
@@ -90,6 +93,10 @@ namespace P3
         private void InitialDescriptionTextBox_TextChanged_1(object sender, EventArgs e)
         {
 
+        }
+        public FakeIssueRepository GetIssueRepo()
+        {
+            return IssueRepo;
         }
     }
 }

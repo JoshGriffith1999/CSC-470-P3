@@ -31,9 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelTotalNumberofIssues = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.IssuesByMonthTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.IssuesByDiscovererTextBox = new System.Windows.Forms.TextBox();
             this.CloseButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -63,15 +63,15 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Issues by Month";
             // 
-            // textBox1
+            // IssuesByMonthTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(87, 168);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(210, 115);
-            this.textBox1.TabIndex = 3;
+            this.IssuesByMonthTextBox.Location = new System.Drawing.Point(87, 168);
+            this.IssuesByMonthTextBox.Multiline = true;
+            this.IssuesByMonthTextBox.Name = "IssuesByMonthTextBox";
+            this.IssuesByMonthTextBox.ReadOnly = true;
+            this.IssuesByMonthTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.IssuesByMonthTextBox.Size = new System.Drawing.Size(210, 115);
+            this.IssuesByMonthTextBox.TabIndex = 3;
             // 
             // label3
             // 
@@ -82,15 +82,15 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Issues by Discoverer";
             // 
-            // textBox2
+            // IssuesByDiscovererTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(87, 352);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(210, 115);
-            this.textBox2.TabIndex = 5;
+            this.IssuesByDiscovererTextBox.Location = new System.Drawing.Point(87, 352);
+            this.IssuesByDiscovererTextBox.Multiline = true;
+            this.IssuesByDiscovererTextBox.Name = "IssuesByDiscovererTextBox";
+            this.IssuesByDiscovererTextBox.ReadOnly = true;
+            this.IssuesByDiscovererTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.IssuesByDiscovererTextBox.Size = new System.Drawing.Size(210, 115);
+            this.IssuesByDiscovererTextBox.TabIndex = 5;
             // 
             // CloseButton
             // 
@@ -108,14 +108,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 616);
             this.Controls.Add(this.CloseButton);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.IssuesByDiscovererTextBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.IssuesByMonthTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelTotalNumberofIssues);
             this.Controls.Add(this.label1);
             this.Name = "FormIssueStatus";
-            this.Text = "FormIssueStatus";
+            this.Text = "Issue Status";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,9 +126,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelTotalNumberofIssues;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox IssuesByMonthTextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox IssuesByDiscovererTextBox;
         private System.Windows.Forms.Button CloseButton;
     }
 }

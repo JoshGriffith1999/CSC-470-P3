@@ -220,7 +220,7 @@
             this.Controls.Add(this.IDTextBox);
             this.Controls.Add(this.label1);
             this.Name = "FormRecordIssue";
-            this.Text = "FormRecordIssue";
+            this.Text = "Record Issue";
             this.ResumeLayout(false);
             this.PerformLayout();
 

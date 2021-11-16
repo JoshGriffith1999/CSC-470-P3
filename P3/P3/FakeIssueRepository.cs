@@ -26,6 +26,10 @@ namespace P3
             {
                 return EMPTY_TITLE_ERROR;
             }
+            if (isDuplicateName(issue.Title)==true)
+            {
+                return DUPLICATE_TITLE_ERROR;
+            }
             if (issue.DiscoveryDate == default(DateTime))
             {
                 return EMPTY_DISCOVERY_DATETIME_ERROR;
@@ -67,10 +71,12 @@ namespace P3
         public string Add(Issue issue) {
 
             string validation = this.ValidateIssue(issue);
-            if (validation == NO_ERROR) {
+            if (validation == NO_ERROR) 
+            {
 
-                issue.Id = Issues.Count + 1;
+                
                 Issues.Add(issue);
+                
                 return NO_ERROR;
             }
             else
@@ -120,13 +126,18 @@ namespace P3
         }
         public List<string> GetIssuesByMonth(int ProjectID) {
             List<string> IssuesByMonth = new List<string>();
-
+            //YEAR - MONTH - AMOUNT IN THAT TIME
+            List<Issue> ValidIssues = new List<Issue>();
             foreach (Issue i in Issues)
             {
                 if (i.ProjectId == ProjectID)
                 {
-                    IssuesByMonth.Add(i.DiscoveryDate.Month.ToString());
+                    ValidIssues.Add(i);
                 }
+            }
+            foreach (Issue i in ValidIssues)
+            {
+
             }
             return IssuesByMonth;
         }

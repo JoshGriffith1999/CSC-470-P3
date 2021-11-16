@@ -16,11 +16,11 @@ namespace P3
         {
             InitializeComponent();
         }
-        public FormIssueStatus(FakeIssueRepository IssueRepo, Project ProjectInUse)
+        public FormIssueStatus(FakeIssueRepository IssueRepo, Project ProjectInUse, List<Issue> Issues)
         {
             InitializeComponent();
             this.ActiveControl = CloseButton;
-            MessageBox.Show(ProjectInUse.ID.ToString());
+            
             int totalIssues = IssueRepo.GetTotalNumberOfIssues(ProjectInUse.ID);
             labelTotalNumberofIssues.Text = totalIssues.ToString();
         }
