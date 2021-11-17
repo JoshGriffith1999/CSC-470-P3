@@ -49,7 +49,9 @@
     <Compile Include="AppUser.cs" />
     <Compile Include="FakeIssueRepository.cs" />
     <Compile Include="FakeStatusRepositroy.cs" />
-    <Compile Include="FormCreateProject.cs" />
+    <Compile Include="FormCreateProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormCreateProject.Designer.cs">
       <DependentUpon>FormCreateProject.cs</DependentUpon>
     </Compile>
@@ -58,6 +60,12 @@
     </Compile>
     <Compile Include="FormIssueStatus.Designer.cs">
       <DependentUpon>FormIssueStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifyIssue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifyIssue.Designer.cs">
+      <DependentUpon>FormModifyIssue.cs</DependentUpon>
     </Compile>
     <Compile Include="FormModifyProject.cs">
       <SubType>Form</SubType>
@@ -71,11 +79,23 @@
     <Compile Include="FormRecordIssue.Designer.cs">
       <DependentUpon>FormRecordIssue.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRemoveIssue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRemoveIssue.Designer.cs">
+      <DependentUpon>FormRemoveIssue.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRemoveProject.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormRemoveProject.Designer.cs">
       <DependentUpon>FormRemoveProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectIssue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectIssue.Designer.cs">
+      <DependentUpon>FormSelectIssue.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSelectProject.cs">
       <SubType>Form</SubType>
@@ -138,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRemoveProject.resx">
       <DependentUpon>FormRemoveProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectIssue.resx">
+      <DependentUpon>FormSelectIssue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSelectProject.resx">
       <DependentUpon>FormSelectProject.cs</DependentUpon>
