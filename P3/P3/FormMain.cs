@@ -154,12 +154,14 @@ namespace P3
 
         private void modifyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Issues = IssueRepository.GetAll(ProjectInUse.ID);
+            FormSelectIssue selectIssue = new FormSelectIssue(Issues);
+            selectIssue.ShowDialog();
         }
 
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            s
+            
         }
     }
 }

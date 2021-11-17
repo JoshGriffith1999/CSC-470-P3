@@ -18,5 +18,10 @@ namespace P3
             InitializeComponent();
             CenterToParent();
         }
+        public FormSelectIssue(List<Issue> Issues)
+        {
+            InitializeComponent();
+            CenterToParent();
+        }
     }
 }
