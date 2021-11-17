@@ -46,3 +46,9 @@ C:\Users\Luke\OneDrive\Desktop\CSC470 - Software Engineering\P3\P3\P3\obj\Debug\
 C:\Users\Luke\OneDrive\Desktop\CSC470 - Software Engineering\P3\P3\P3\obj\Debug\P3.FormCreateProject.resources
 C:\Users\Luke\OneDrive\Desktop\CSC470 - Software Engineering\P3\P3\P3\obj\Debug\P3.FormIssueStatus.resources
 C:\Users\Luke\OneDrive\Desktop\CSC470 - Software Engineering\P3\P3\P3\obj\Debug\P3.FormSelectIssue.resources
+C:\Users\maria\Desktop\CSC_470_App\P3\P3\obj\Debug\P3.FormCreateProject.resources
+C:\Users\maria\Desktop\CSC_470_App\P3\P3\obj\Debug\P3.FormIssueStatus.resources
+C:\Users\maria\Desktop\CSC_470_App\P3\P3\obj\Debug\P3.FormModifyIssue.resources
+C:\Users\maria\Desktop\CSC_470_App\P3\P3\obj\Debug\P3.FormRecordIssue.resources
+C:\Users\maria\Desktop\CSC_470_App\P3\P3\obj\Debug\P3.FormSelectIssue.resources
+C:\Users\maria\Desktop\CSC_470_App\P3\P3\obj\Debug\P3.FormRemoveIssue.resources

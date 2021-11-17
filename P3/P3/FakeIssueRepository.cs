@@ -110,7 +110,7 @@ namespace P3
         }
         public string Modify(int IssueID, Issue issue)
         {
-            return "O";
+            return "Issue: "+issue.Title+" has been modified";
         }
         public int GetTotalNumberOfIssues(int ProjectID) {
 

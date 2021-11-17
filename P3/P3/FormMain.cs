@@ -156,12 +156,16 @@ namespace P3
         {
             Issues = IssueRepository.GetAll(ProjectInUse.ID);
             FormSelectIssue selectIssue = new FormSelectIssue(Issues);
-            selectIssue.ShowDialog();
+            result = selectIssue.ShowDialog();
             Issue selectedIssue = new Issue();
             selectedIssue = selectIssue.getSelectedIssue();
             //selectedIssue now contains a selected Issue
-
-
+            FormModifyIssue modifiedIssue = new FormModifyIssue(selectedIssue, IssueRepository, Issues, UserRepository, ProjectInUse.ID, users);
+            if (result != DialogResult.Cancel)
+            {
+                modifiedIssue.ShowDialog();
+            }
+          
 
             //
         }
@@ -170,11 +174,15 @@ namespace P3
         {
             Issues = IssueRepository.GetAll(ProjectInUse.ID);
             FormSelectIssue selectIssue = new FormSelectIssue(Issues);
-            selectIssue.ShowDialog();
+            result = selectIssue.ShowDialog();
             Issue selectedIssue = new Issue();
             selectedIssue = selectIssue.getSelectedIssue();
             //selectedIssue now contains a selected Issue
-
+            FormRemoveIssue modifiedIssue = new FormRemoveIssue(selectedIssue, IssueRepository, Issues, UserRepository, ProjectInUse.ID, users);
+            if (result != DialogResult.Cancel)
+            {
+                modifiedIssue.ShowDialog();
+            }
             //
         }
     }
