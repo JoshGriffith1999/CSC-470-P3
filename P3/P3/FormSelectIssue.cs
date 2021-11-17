@@ -14,6 +14,7 @@ namespace P3
     {
         FakeIssueRepository issueRepo = new FakeIssueRepository();
         Issue selectedIssue = new Issue();
+        List<Issue> iss = new List<Issue>();
         public FormSelectIssue()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace P3
         {
             InitializeComponent();
             CenterToParent();
+            iss = Issues;
             this.SelectIssueDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             foreach (Issue i in Issues)
             {
@@ -39,7 +41,25 @@ namespace P3
 
         private void modifySelect_Click(object sender, EventArgs e)
         {
+            DataGridViewSelectedRowCollection rows = SelectIssueDataGridView.SelectedRows;
+            string selectedCell = (string)rows[0].Cells[0].Value;
+            foreach(Issue i in iss)
+            {
+                if (i.Id.ToString() == selectedCell)
+                {
+                    selectedIssue = i;
+                    
+                    this.Hide();
+                    this.DialogResult = DialogResult.OK;
+                }
+            }
 
+            
+
+        }
+        public Issue getSelectedIssue()
+        {
+            return selectedIssue;
         }
     }
 }

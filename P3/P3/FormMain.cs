@@ -157,11 +157,25 @@ namespace P3
             Issues = IssueRepository.GetAll(ProjectInUse.ID);
             FormSelectIssue selectIssue = new FormSelectIssue(Issues);
             selectIssue.ShowDialog();
+            Issue selectedIssue = new Issue();
+            selectedIssue = selectIssue.getSelectedIssue();
+            //selectedIssue now contains a selected Issue
+
+
+
+            //
         }
 
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            Issues = IssueRepository.GetAll(ProjectInUse.ID);
+            FormSelectIssue selectIssue = new FormSelectIssue(Issues);
+            selectIssue.ShowDialog();
+            Issue selectedIssue = new Issue();
+            selectedIssue = selectIssue.getSelectedIssue();
+            //selectedIssue now contains a selected Issue
+
+            //
         }
     }
 }
