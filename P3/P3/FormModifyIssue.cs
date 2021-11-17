@@ -19,9 +19,7 @@ namespace P3
         
         public FormModifyIssue()
         {
-            projects = fakeProjectRepo.GetAll();
-            curProjID = fakeProjectRepo.
-            allIssues = fakeIssueRepo.GetAll();
+            
             InitializeComponent();
         }
     }

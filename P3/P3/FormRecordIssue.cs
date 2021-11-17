@@ -16,7 +16,7 @@ namespace P3
         Issue IssueInUse = new Issue();
         
         int ProjectId;
-            public FormRecordIssue()
+        public FormRecordIssue()
         {
             InitializeComponent();
             CenterToScreen();

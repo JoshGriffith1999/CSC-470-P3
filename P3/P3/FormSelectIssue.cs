@@ -22,6 +22,11 @@ namespace P3
         {
             InitializeComponent();
             CenterToParent();
+            foreach(Issue i in Issues)
+            {
+                string[] row = new string[] { i.Id.ToString(), i.DiscoveryDate.ToString(), i.Discoverer, i.InitialDescription, i.Component, i.Status };
+                SelectIssueDataGridView.Rows.Add(row);
+            }
         }
     }
 }

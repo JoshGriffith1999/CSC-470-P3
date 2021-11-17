@@ -31,14 +31,14 @@ namespace P3
         {
             this.modifyCancel = new System.Windows.Forms.Button();
             this.modifySelect = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.SelectIssueDataGridView = new System.Windows.Forms.DataGridView();
             this.IssueID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IssueDiscoveryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IssueDiscoverer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IssueInitialDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IssueComponent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IssueStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SelectIssueDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // modifyCancel
@@ -59,25 +59,25 @@ namespace P3
             this.modifySelect.Text = "Select Issue";
             this.modifySelect.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // SelectIssueDataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SelectIssueDataGridView.AllowUserToAddRows = false;
+            this.SelectIssueDataGridView.AllowUserToDeleteRows = false;
+            this.SelectIssueDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SelectIssueDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IssueID,
             this.IssueDiscoveryDate,
             this.IssueDiscoverer,
             this.IssueInitialDescription,
             this.IssueComponent,
             this.IssueStatus});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 71);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(754, 264);
-            this.dataGridView1.TabIndex = 2;
+            this.SelectIssueDataGridView.Location = new System.Drawing.Point(12, 89);
+            this.SelectIssueDataGridView.Name = "SelectIssueDataGridView";
+            this.SelectIssueDataGridView.ReadOnly = true;
+            this.SelectIssueDataGridView.RowHeadersWidth = 51;
+            this.SelectIssueDataGridView.RowTemplate.Height = 24;
+            this.SelectIssueDataGridView.Size = new System.Drawing.Size(754, 264);
+            this.SelectIssueDataGridView.TabIndex = 2;
             // 
             // IssueID
             // 
@@ -85,7 +85,7 @@ namespace P3
             this.IssueID.MinimumWidth = 6;
             this.IssueID.Name = "IssueID";
             this.IssueID.ReadOnly = true;
-            this.IssueID.Width = 125;
+            this.IssueID.Width = 60;
             // 
             // IssueDiscoveryDate
             // 
@@ -132,12 +132,12 @@ namespace P3
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.SelectIssueDataGridView);
             this.Controls.Add(this.modifySelect);
             this.Controls.Add(this.modifyCancel);
             this.Name = "FormSelectIssue";
             this.Text = "Select Issue";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SelectIssueDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -146,7 +146,7 @@ namespace P3
 
         private System.Windows.Forms.Button modifyCancel;
         private System.Windows.Forms.Button modifySelect;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView SelectIssueDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn IssueID;
         private System.Windows.Forms.DataGridViewTextBoxColumn IssueDiscoveryDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn IssueDiscoverer;
