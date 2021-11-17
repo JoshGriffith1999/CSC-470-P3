@@ -59,6 +59,7 @@ namespace P3
             this.modifySelect.TabIndex = 1;
             this.modifySelect.Text = "Select Issue";
             this.modifySelect.UseVisualStyleBackColor = true;
+            this.modifySelect.Click += new System.EventHandler(this.modifySelect_Click);
             // 
             // SelectIssueDataGridView
             // 
@@ -72,7 +73,9 @@ namespace P3
             this.IssueInitialDescription,
             this.IssueComponent,
             this.IssueStatus});
+            this.SelectIssueDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.SelectIssueDataGridView.Location = new System.Drawing.Point(12, 89);
+            this.SelectIssueDataGridView.MultiSelect = false;
             this.SelectIssueDataGridView.Name = "SelectIssueDataGridView";
             this.SelectIssueDataGridView.ReadOnly = true;
             this.SelectIssueDataGridView.RowHeadersWidth = 51;
