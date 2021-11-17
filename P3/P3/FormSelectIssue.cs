@@ -28,5 +28,11 @@ namespace P3
                 SelectIssueDataGridView.Rows.Add(row);
             }
         }
+
+        private void modifyCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }

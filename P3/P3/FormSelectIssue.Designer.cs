@@ -49,6 +49,7 @@ namespace P3
             this.modifyCancel.TabIndex = 0;
             this.modifyCancel.Text = "Cancel";
             this.modifyCancel.UseVisualStyleBackColor = true;
+            this.modifyCancel.Click += new System.EventHandler(this.modifyCancel_Click);
             // 
             // modifySelect
             // 
