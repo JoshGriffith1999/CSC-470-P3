@@ -151,5 +151,10 @@ namespace P3
             FormIssueStatus recordIssue = new FormIssueStatus(IssueRepository, ProjectInUse,Issues);
             recordIssue.ShowDialog();
         }
+
+        private void modifyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
