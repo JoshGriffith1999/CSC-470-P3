@@ -156,5 +156,10 @@ namespace P3
         {
 
         }
+
+        private void removeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            s
+        }
     }
 }
