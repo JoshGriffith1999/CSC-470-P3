@@ -41,7 +41,7 @@ namespace P3
                 SelectProjectListBox.Items.Insert(i,fillbox);
                 
             }
-
+            SelectProjectListBox.SetSelected(0,true);
         }
 
 
