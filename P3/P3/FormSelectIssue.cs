@@ -26,11 +26,13 @@ namespace P3
             CenterToParent();
             iss = Issues;
             this.SelectIssueDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            foreach (Issue i in Issues)
-            {
-                string[] row = new string[] { i.Id.ToString(), i.DiscoveryDate.ToString(), i.Discoverer, i.InitialDescription, i.Component, i.Status };
-                SelectIssueDataGridView.Rows.Add(row);
-            }
+            
+                foreach (Issue i in Issues)
+                {
+                    string[] row = new string[] { i.Id.ToString(), i.DiscoveryDate.ToString(), i.Discoverer, i.InitialDescription, i.Component, i.Status };
+                    SelectIssueDataGridView.Rows.Add(row);
+                }
+                
         }
 
         private void modifyCancel_Click(object sender, EventArgs e)
@@ -48,9 +50,9 @@ namespace P3
                 if (i.Id.ToString() == selectedCell)
                 {
                     selectedIssue = i;
-                    
-                    this.Hide();
                     this.DialogResult = DialogResult.OK;
+                    this.Hide();
+                    
                 }
             }
 
