@@ -179,17 +179,24 @@ namespace P3
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Issues = IssueRepository.GetAll(ProjectInUse.ID);
-            FormSelectIssue selectIssue = new FormSelectIssue(Issues);
-            result = selectIssue.ShowDialog();
-            Issue selectedIssue = new Issue();
-            selectedIssue = selectIssue.getSelectedIssue();
-            //selectedIssue now contains a selected Issue
-            FormRemoveIssue modifiedIssue = new FormRemoveIssue(selectedIssue, IssueRepository, Issues, UserRepository, ProjectInUse.ID, users);
-            if (result != DialogResult.Cancel)
+            if (Issues.Count != 0)
             {
-                modifiedIssue.ShowDialog();
+                FormSelectIssue selectIssue = new FormSelectIssue(Issues);
+                result = selectIssue.ShowDialog();
+                Issue selectedIssue = new Issue();
+                selectedIssue = selectIssue.getSelectedIssue();
+                //selectedIssue now contains a selected Issue
+                FormRemoveIssue modifiedIssue = new FormRemoveIssue(selectedIssue, IssueRepository, Issues, UserRepository, ProjectInUse.ID, users);
+                if (result != DialogResult.Cancel)
+                {
+                    modifiedIssue.ShowDialog();
+                }
             }
-            //
-        }
+            else
+            {
+                MessageBox.Show("There are no issues to remove.");
+            }
+    //
+}
     }
 }
