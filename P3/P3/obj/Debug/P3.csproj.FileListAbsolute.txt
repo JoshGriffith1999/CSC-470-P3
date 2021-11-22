@@ -1,9 +1,0 @@
-C:\Users\DSU\Desktop\CSC-470-Software-Engineering\Assignments\P3\P3\P3\bin\Debug\P3.exe.config
-C:\Users\DSU\Desktop\CSC-470-Software-Engineering\Assignments\P3\P3\P3\bin\Debug\P3.exe
-C:\Users\DSU\Desktop\CSC-470-Software-Engineering\Assignments\P3\P3\P3\bin\Debug\P3.pdb
-C:\Users\DSU\Desktop\CSC-470-Software-Engineering\Assignments\P3\P3\P3\obj\Debug\P3.csproj.AssemblyReference.cache
-C:\Users\DSU\Desktop\CSC-470-Software-Engineering\Assignments\P3\P3\P3\obj\Debug\P3.Properties.Resources.resources
-C:\Users\DSU\Desktop\CSC-470-Software-Engineering\Assignments\P3\P3\P3\obj\Debug\P3.csproj.GenerateResource.cache
-C:\Users\DSU\Desktop\CSC-470-Software-Engineering\Assignments\P3\P3\P3\obj\Debug\P3.csproj.CoreCompileInputs.cache
-C:\Users\DSU\Desktop\CSC-470-Software-Engineering\Assignments\P3\P3\P3\obj\Debug\P3.exe
-C:\Users\DSU\Desktop\CSC-470-Software-Engineering\Assignments\P3\P3\P3\obj\Debug\P3.pdb
