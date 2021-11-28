@@ -44,7 +44,8 @@ namespace P3
             return this.User;
         }
 
-        public void Login() {
+        public void Login()
+        {
 
             bool IsAuthenticatied = UserRepository.Login(this.User.UserName, this.User.Password);
 
@@ -61,7 +62,8 @@ namespace P3
 
         }
 
-        public void setAuthentication(string UserToAuthent, bool authent) {
+        public void setAuthentication(string UserToAuthent, bool authent)
+        {
             UserRepository.SetAuthentication(UserToAuthent, authent);
             User = UserRepository.GetByUserName(UserToAuthent);
         }

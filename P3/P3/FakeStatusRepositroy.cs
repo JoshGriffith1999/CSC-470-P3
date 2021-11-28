@@ -10,7 +10,8 @@ namespace P3
     {
         private List<IssueStatus> IssueStatuses;
         /////////////////////////////////////
-        public void Add(int ID, string Value) {
+        public void Add(int ID, string Value)
+        {
 
             IssueStatus status = new IssueStatus();
             status.ID = ID;
@@ -19,27 +20,32 @@ namespace P3
             IssueStatuses.Add(status);
 
         }
-        public List<IssueStatus> GetAll() {
+        public List<IssueStatus> GetAll()
+        {
 
             return IssueStatuses;
         }
-        public int GetIDByStatus(string value) {
+        public int GetIDByStatus(string value)
+        {
 
-            foreach (IssueStatus i in IssueStatuses) {
-                if (i.Value == value) {
+            foreach (IssueStatus i in IssueStatuses)
+            {
+                if (i.Value == value)
+                {
                     return i.ID;
                 }
             }
             //NOT SURE IF THIS IS CORRECT
             return -1;
         }
-        public string GetValueByID(int ID) {
+        public string GetValueByID(int ID)
+        {
             foreach (IssueStatus i in IssueStatuses)
             {
                 if (i.ID == ID)
                 {
                     return i.Value.ToString();
-                } 
+                }
             }
             return "ERROR GetValByID";
         }

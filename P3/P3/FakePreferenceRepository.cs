@@ -13,10 +13,11 @@ namespace P3
         private const string NO_ERROR = "NO Erros";
         private static Dictionary<string, Dictionary<string, string>> Preferences = new Dictionary<string, Dictionary<string, string>>();
         /*****************************************/
-        public string GetPreference(string UserName, string PreferenceName) {
+        public string GetPreference(string UserName, string PreferenceName)
+        {
             Dictionary<string, string> NameValuepair = new Dictionary<string, string>();
             string value = "";
-            if(Preferences.TryGetValue(UserName, out NameValuepair))
+            if (Preferences.TryGetValue(UserName, out NameValuepair))
             {
                 NameValuepair.TryGetValue(PreferenceName, out value);
             }

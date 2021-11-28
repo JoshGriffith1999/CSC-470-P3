@@ -39,7 +39,7 @@ namespace P3
 
         private void Modify_Click(object sender, EventArgs e)
         {
-            if( this.ProjectInUse.Name == this.selectProject.Name || this.ProjectInUse.ID == this.selectProject.ID)
+            if (this.ProjectInUse.Name == this.selectProject.Name || this.ProjectInUse.ID == this.selectProject.ID)
             {
                 MessageBox.Show("Cannot modify your current session project.");
                 this.Close();
@@ -52,15 +52,16 @@ namespace P3
                 if (newProjName.Length < 1)
                 {
                     MessageBox.Show("Project Name is Empty or Blank");
-                } else
+                }
+                else
                 {
                     //duplicate names
                     if (Repo.IsDuplicateName(newProjName))
                     {
                         MessageBox.Show("Project Name already exists.");
-                    } 
+                    }
                     else
-                    { 
+                    {
                         this.selectProject.Name = newProjName;
                     }
                 }

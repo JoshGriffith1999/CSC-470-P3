@@ -25,7 +25,7 @@ namespace P3
             CenterToScreen();
             IssueRepo = I;
             IssueInUse = selectedIssue;
-            textBox1.Text = "Are you sure you want to remove: "+IssueInUse.Title+"?";
+            textBox1.Text = "Are you sure you want to remove: " + IssueInUse.Title + "?";
         }
 
         private void Confirm_click_Click(object sender, EventArgs e)

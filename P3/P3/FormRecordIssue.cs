@@ -14,7 +14,7 @@ namespace P3
     {
         FakeIssueRepository IssueRepo = new FakeIssueRepository();
         Issue IssueInUse = new Issue();
-        
+
         int ProjectId;
         public FormRecordIssue()
         {
@@ -28,15 +28,15 @@ namespace P3
         {
             InitializeComponent();
             CenterToScreen();
-            IssueRepo =I;
+            IssueRepo = I;
 
             users = Users.GetALL();
             foreach (AppUser user in users)
             {
-                DiscovererCombo.Items.Add(user.LastName + "," +user.FirstName);
+                DiscovererCombo.Items.Add(user.LastName + "," + user.FirstName);
             }
             ProjectId = PId;
-            
+
             IDTextBox.Text = (I.GetNextId()).ToString();
             this.ActiveControl = TitleTextBox;
             DiscoveryTimeDate.MaxDate = DateTime.Now;
@@ -47,36 +47,36 @@ namespace P3
             Issue createdIssue = new Issue();
             createdIssue.ProjectId = ProjectId;
             createdIssue.Id = Int32.Parse(IDTextBox.Text.Trim());
-            
+
             createdIssue.Title = TitleTextBox.Text.Trim();
             createdIssue.DiscoveryDate = DiscoveryTimeDate.Value;
             var Discoverertester = DiscovererCombo.SelectedItem;
-            if( Discoverertester == null)
+            if (Discoverertester == null)
             {
             }
-            else 
-            { 
-            createdIssue.Discoverer = DiscovererCombo.SelectedItem.ToString().Trim();
+            else
+            {
+                createdIssue.Discoverer = DiscovererCombo.SelectedItem.ToString().Trim();
             }
-           
+
             createdIssue.Component = ComponentTextBox.Text.Trim();
             createdIssue.InitialDescription = InitialDescriptionTextBox.Text.Trim();
-            
+
             string result = IssueRepo.Add(createdIssue);
-            if(result != IssueRepo.NO_ERROR)
+            if (result != IssueRepo.NO_ERROR)
             {
                 MessageBox.Show(result, "Attention");
             }
             else
             {
                 MessageBox.Show("Issue added.");
-               
+
                 this.Hide();
                 this.DialogResult = DialogResult.OK;
             }
-            
-              
-            
+
+
+
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

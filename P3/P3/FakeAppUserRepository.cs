@@ -23,7 +23,7 @@ namespace P3
                     LastName = "Doe",
                     EmailAddress = "john.doe@gmail.com",
                     IsAuthenticated = false
-                }) ;
+                });
             }
         }
         public bool Login(string UserName, string givenPassword)
@@ -31,14 +31,16 @@ namespace P3
             AppUser appUser;
             if (AppUsers.TryGetValue(UserName, out appUser))
             {
-                if (appUser.Password == givenPassword) { 
+                if (appUser.Password == givenPassword)
+                {
                     SetAuthentication(UserName, true);
                     return true;
                 }
             }
             return false;
-        }           
-        public List<AppUser> GetALL() {
+        }
+        public List<AppUser> GetALL()
+        {
             List<AppUser> users = new List<AppUser>();
             foreach (KeyValuePair<string, AppUser> user in AppUsers)
             {
@@ -46,10 +48,12 @@ namespace P3
             }
             return users;
         }
-        public void SetAuthentication(string UserName, bool IsAuthenticated) {
+        public void SetAuthentication(string UserName, bool IsAuthenticated)
+        {
             AppUsers[UserName].IsAuthenticated = IsAuthenticated;
         }
-        public AppUser GetByUserName(string UserName) {
+        public AppUser GetByUserName(string UserName)
+        {
             AppUser user;
             bool ignore = AppUsers.TryGetValue(UserName, out user);
             return user;

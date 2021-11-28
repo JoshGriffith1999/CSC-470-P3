@@ -70,7 +70,7 @@ namespace P3
             IssueInUse.Status = comboBox1.Text.Trim();
             IssueInUse.InitialDescription = InitialDescriptionTextBox.Text.Trim();
 
-            string result = IssueRepo.Modify(IssueInUse.Id,IssueInUse);
+            string result = IssueRepo.Modify(IssueInUse.Id, IssueInUse);
             if (result != IssueRepo.NO_ERROR)
             {
                 MessageBox.Show(result, "Attention");

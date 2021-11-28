@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace P3
 {
-    class Feature
+    public class Feature
     {
         public int id;
-        public int ProjecyID;
+        public int ProjectID;
         public string Title;
     }
 }

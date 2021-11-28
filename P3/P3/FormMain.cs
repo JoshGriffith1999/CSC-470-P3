@@ -15,14 +15,17 @@ namespace P3
         FakeAppUserRepository UserRepository = new FakeAppUserRepository();
         FakeProjectRepository ProjectRepository = new FakeProjectRepository();
         FakeIssueRepository IssueRepository = new FakeIssueRepository();
+        FakeFeatureRepository FeatureRepository = new FakeFeatureRepository();
         Issue IssueInUse = new Issue();
         Project ProjectInUse = new Project();
-        
+        Feature FeatureInUse = new Feature();
+
         private AppUser User = new AppUser();
         private List<Project> Projects = new List<Project>();
         private List<Issue> Issues = new List<Issue>();
         private List<AppUser> users = new List<AppUser>();
-       
+        private List<Feature> Features = new List<Feature>();
+
         DialogResult result = DialogResult.None;
         public FormMain()
         {
@@ -34,12 +37,12 @@ namespace P3
         private void FormMain_load(object sender, System.EventArgs e)
         {
             FormLogin Login = new FormLogin();
-            
+
             int FailedAttempts = 0;
             int MaxFailedAttempts = 3;
             User.IsAuthenticated = false;
 
-            while(User.IsAuthenticated != true && result != DialogResult.OK)
+            while (User.IsAuthenticated != true && result != DialogResult.OK)
             {
                 result = Login.ShowDialog();
                 User = Login.GetUser();
@@ -49,7 +52,7 @@ namespace P3
                     break;
                 }
 
-                if(result != DialogResult.OK)
+                if (result != DialogResult.OK)
                 {
                     FailedAttempts += 1;
                     if (FailedAttempts == MaxFailedAttempts)
@@ -57,12 +60,12 @@ namespace P3
                         result = DialogResult.Cancel;
                         break;
                     }
-                    
+
                 }
-               
+
             }
 
-            if(result == DialogResult.Cancel)
+            if (result == DialogResult.Cancel)
             {
                 this.Close();
                 Application.Exit();
@@ -93,8 +96,8 @@ namespace P3
                         Application.Exit();
                     }
                 }
-             
-                
+
+
                 //this.Text = "Main - No Project Selected";
             }
         }
@@ -137,18 +140,18 @@ namespace P3
         private void recordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             users = UserRepository.GetALL();
-            FormRecordIssue recordIssue = new FormRecordIssue(IssueRepository, Issues, UserRepository, ProjectInUse.ID,users);
+            FormRecordIssue recordIssue = new FormRecordIssue(IssueRepository, Issues, UserRepository, ProjectInUse.ID, users);
             recordIssue.ShowDialog();
             IssueRepository = recordIssue.GetIssueRepo();
             Issues = IssueRepository.GetAll(ProjectInUse.ID);
-            
+
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             Issues = IssueRepository.GetAll(ProjectInUse.ID);
-            FormIssueStatus recordIssue = new FormIssueStatus(IssueRepository, ProjectInUse,Issues);
+            FormIssueStatus recordIssue = new FormIssueStatus(IssueRepository, ProjectInUse, Issues);
             recordIssue.ShowDialog();
         }
 
@@ -196,7 +199,60 @@ namespace P3
             {
                 MessageBox.Show("There are no issues to remove.");
             }
-    //
-}
+            //
+        }
+
+        private void createToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            
+            FormCreateFeature createFeature = new FormCreateFeature(ProjectInUse, FeatureRepository);
+            createFeature.ShowDialog();
+            FeatureRepository = createFeature.GetFeatureRepo();
+            Features = FeatureRepository.GetAll(ProjectInUse.ID);
+        }
+
+        private void modifyToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Features = FeatureRepository.GetAll(ProjectInUse.ID);
+            if (Features.Count != 0)
+            {
+                FormSelectFeature selectFeature = new FormSelectFeature(Features);
+                result = selectFeature.ShowDialog();
+                Feature selectedFeature = new Feature();
+                selectedFeature = selectFeature.getSelectedFeature();
+                //selectedFeature now contains a selected Feature
+                FormModifyFeature modifiedFeature = new FormModifyFeature(ProjectInUse, FeatureRepository, selectedFeature);
+                if (result != DialogResult.Cancel)
+                {
+                    modifiedFeature.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("There are no features to modify.");
+            }
+        }
+
+        private void removeToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Features = FeatureRepository.GetAll(ProjectInUse.ID);
+            if (Features.Count != 0)
+            {
+                FormSelectFeature selectFeature = new FormSelectFeature(Features);
+                result = selectFeature.ShowDialog();
+                Feature selectedFeature = new Feature();
+                selectedFeature = selectFeature.getSelectedFeature();
+                //selectedFeature now contains a selected Feature
+                FormRemoveFeature removedFeature = new FormRemoveFeature(selectedFeature, FeatureRepository);
+                if (result != DialogResult.Cancel)
+                {
+                    removedFeature.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("There are no features to modify.");
+            }
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace P3
         public string InitialDescription;
         public string Component;
         public string Status;
-         
+
         public Issue(int inputID, string inputTitle, DateTime inputDate, string inputDiscoverer, string inputInitialDescription, string inputComponent, string inputStatus)
         {
             Id = inputID;

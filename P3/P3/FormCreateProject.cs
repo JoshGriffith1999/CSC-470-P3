@@ -22,11 +22,11 @@ namespace P3
 
         private void AddProjectButton_Click(object sender, EventArgs e)
         {
-            
-                
+
+
 
             string outputMessage;
-            string NewProjectName=AddProjectNameBox.Text.ToString();
+            string NewProjectName = AddProjectNameBox.Text.ToString();
             projects.Name = NewProjectName;
             //MessageBox.Show(projects.Name, "Attention");
             outputMessage = this.ProjectRepository.Add(projects, 0);

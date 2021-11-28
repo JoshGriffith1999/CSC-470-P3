@@ -20,10 +20,10 @@ namespace P3
         {
             InitializeComponent();
             this.ActiveControl = CloseButton;
-            
+
             int totalIssues = IssueRepo.GetTotalNumberOfIssues(ProjectInUse.ID);
             labelTotalNumberofIssues.Text = totalIssues.ToString();
-            foreach(string i in IssueRepo.GetIssuesByMonth(ProjectInUse.ID))
+            foreach (string i in IssueRepo.GetIssuesByMonth(ProjectInUse.ID))
             {
                 IssuesByMonthTextBox.AppendText(i);
                 IssuesByMonthTextBox.AppendText(Environment.NewLine);

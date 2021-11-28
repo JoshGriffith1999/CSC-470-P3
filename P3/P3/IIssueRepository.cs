@@ -8,7 +8,7 @@ namespace P3
 {
     interface IIssueRepository
     {
-        
+
         int GetNextId();
         bool isDuplicateName(string IssueTitle);
         string Add(Issue issue);

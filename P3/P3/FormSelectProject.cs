@@ -27,10 +27,10 @@ namespace P3
             InitializeComponent();
             CenterToScreen();
             Projects = P.GetAll();
-            
+
             string fillbox = "Hello";
             int i = 0;
-           // SelectProjectListBox.DataSource = Projects;
+            // SelectProjectListBox.DataSource = Projects;
 
             //MessageBox.Show(fillbox);
             foreach (Project p in Projects)
@@ -38,10 +38,10 @@ namespace P3
                 i = p.ID;
                 fillbox = p.ID + " - " + p.Name;
 
-                SelectProjectListBox.Items.Insert(i,fillbox);
-                
+                SelectProjectListBox.Items.Insert(i, fillbox);
+
             }
-            SelectProjectListBox.SetSelected(0,true);
+            SelectProjectListBox.SetSelected(0, true);
         }
 
 
@@ -63,11 +63,11 @@ namespace P3
             this.Hide();
             this.DialogResult = DialogResult.OK;
         }
-        
+
         public Project returnProject()
         {
             return ProjectInUse;
         }
-        
+
     }
 }

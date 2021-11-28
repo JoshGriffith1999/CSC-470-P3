@@ -28,21 +28,24 @@ namespace P3
                 Project test3 = new Project(3, "test3");
                 Projects.Insert(3, test3);
             }
-            
+
         }
-       public string Add(Project project, int out_id) {
+        public string Add(Project project, int out_id)
+        {
             //THIS IS WORKING
             int i = this.GetNextId();
             project.ID = i;
             Projects.Add(project);
             return "New Project created";
         }
-       public string Remove(int ProjectID) {
+        public string Remove(int ProjectID)
+        {
             //This might work? Not sure exactly. We will need to create a form to be able to select the one we want to remove.
             Projects.RemoveAt(ProjectID);
             return "Project Removed successfully";
         }
-       public string Modify(int projectID, Project Project) {
+        public string Modify(int projectID, Project Project)
+        {
             foreach (Project p in Projects)
             {
                 if (p.ID == Project.ID)
@@ -52,12 +55,14 @@ namespace P3
             }
             return "Project Modified successfully.";
         }
-       public List<Project> GetAll() {
+        public List<Project> GetAll()
+        {
             return Projects;
         }
-       public bool IsDuplicateName(string ProjectName) {
+        public bool IsDuplicateName(string ProjectName)
+        {
             bool checker = false;
-            foreach(Project p in Projects)
+            foreach (Project p in Projects)
             {
                 if (p.Name == ProjectName)
                     checker = true;
@@ -67,9 +72,9 @@ namespace P3
         private int GetNextId()
         {
             int i = 0;
-            foreach(Project p in Projects)
+            foreach (Project p in Projects)
             {
-                if(i < p.ID)
+                if (i < p.ID)
                 {
                     i = p.ID;
                 }

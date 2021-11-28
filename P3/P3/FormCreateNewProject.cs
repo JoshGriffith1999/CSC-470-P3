@@ -15,7 +15,7 @@ namespace P3
         Project project = new Project();
         FakeProjectRepository ProjectRepository = new FakeProjectRepository();
         List<Project> Projects = new List<Project>();
-        
+
         public FormCreateNewProject()
         {
             InitializeComponent();
@@ -36,13 +36,13 @@ namespace P3
             }
             else
             {
-                ProjectRepository.Add(project,0);
+                ProjectRepository.Add(project, 0);
                 MessageBox.Show(Projects[4].Name, "Attention");
             }
             this.Hide();
         }
 
-        
+
         public FakeProjectRepository ReturnRepository()
         {
             return ProjectRepository;

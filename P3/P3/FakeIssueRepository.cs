@@ -15,7 +15,6 @@ namespace P3
         public string EMPTY_DISCOVERY_ERROR = "A discoverer is required";
         public string DUPLICATE_TITLE_ERROR = "Issue title must be unique.";
 
-        
         private List<Issue> Issues = new List<Issue>();
         Issue IssueInUse = new Issue();
 
@@ -26,7 +25,7 @@ namespace P3
             {
                 return EMPTY_TITLE_ERROR;
             }
-            if (isDuplicateName(issue.Title)==true)
+            if (isDuplicateName(issue.Title) == true)
             {
                 return DUPLICATE_TITLE_ERROR;
             }
@@ -68,15 +67,16 @@ namespace P3
             return i;
         }
         //////////////////////////////////////////////////////////////////
-        public string Add(Issue issue) {
+        public string Add(Issue issue)
+        {
 
             string validation = this.ValidateIssue(issue);
-            if (validation == NO_ERROR) 
+            if (validation == NO_ERROR)
             {
 
-                
+
                 Issues.Add(issue);
-                
+
                 return NO_ERROR;
             }
             else
@@ -84,22 +84,27 @@ namespace P3
                 return validation;
             }
         }
-        public List<Issue> GetAll(int ProjectID) {
+        public List<Issue> GetAll(int ProjectID)
+        {
             return Issues;
         }
-        public bool Remove(Issue issue) {
+        public bool Remove(Issue issue)
+        {
             bool inList = false;
 
             //Sees if issue passed in is actually in the repository
             //If so, sets inList to true
-            foreach (Issue i in Issues) {
-                if (i.ProjectId == issue.ProjectId) {
+            foreach (Issue i in Issues)
+            {
+                if (i.ProjectId == issue.ProjectId)
+                {
                     inList = true;
                     break;
                 }
             }
 
-            if (inList == false) {
+            if (inList == false)
+            {
                 return inList;
             }
             else
@@ -110,12 +115,14 @@ namespace P3
         }
         public string Modify(int IssueID, Issue issue)
         {
-            return "Issue: "+issue.Title+" has been modified";
+            return "Issue: " + issue.Title + " has been modified";
         }
-        public int GetTotalNumberOfIssues(int ProjectID) {
+        public int GetTotalNumberOfIssues(int ProjectID)
+        {
 
             int numberOfIssues = 0;
-            foreach(Issue i in Issues) {
+            foreach (Issue i in Issues)
+            {
                 if (i.ProjectId == ProjectID)
                 {
                     numberOfIssues++;
@@ -124,20 +131,21 @@ namespace P3
 
             return numberOfIssues;
         }
-        public List<string> GetIssuesByMonth(int ProjectID) {
+        public List<string> GetIssuesByMonth(int ProjectID)
+        {
             List<string> IssuesByMonth = new List<string>();
             //YEAR - MONTH - AMOUNT IN THAT TIME
             List<Issue> ValidIssues = new List<Issue>();
-            int[] monthYearCount= new int[200];
-            
-            foreach(Issue i in Issues)
+            int[] monthYearCount = new int[200];
+
+            foreach (Issue i in Issues)
             {
-                if (ProjectID == i.ProjectId) 
+                if (ProjectID == i.ProjectId)
                 {
-                    
-                        ValidIssues.Add(i);
-                        monthYearCount[(i.DiscoveryDate.Month-1)+((DateTime.Now.Year-i.DiscoveryDate.Year)*12)]++;
-                    
+
+                    ValidIssues.Add(i);
+                    monthYearCount[(i.DiscoveryDate.Month - 1) + ((DateTime.Now.Year - i.DiscoveryDate.Year) * 12)]++;
+
                 }
             }
             int j = 0;
@@ -151,17 +159,18 @@ namespace P3
                     }
                     else
                     {
-                        IssuesByMonth.Add((DateTime.Now.Year-(j/12)).ToString() + " - " + (((j%12) + 1)).ToString() + " - " + monthYearCount[j].ToString());
+                        IssuesByMonth.Add((DateTime.Now.Year - (j / 12)).ToString() + " - " + (((j % 12) + 1)).ToString() + " - " + monthYearCount[j].ToString());
                     }
                 }
                 j++;
             }
-           
-           
+
+
             return IssuesByMonth;
         }
         //GetIssueByDiscoverer is working perfectly!
-        public List<string> GetIssueByDiscoverer(int ProjectID) {
+        public List<string> GetIssueByDiscoverer(int ProjectID)
+        {
 
             List<String> IssuesByDiscover = new List<string>();
             int[] discovererCount = new int[100];
@@ -169,7 +178,8 @@ namespace P3
             int dct = 0;
             int j = 0;
             bool test = false;
-            foreach(Issue i in Issues) {
+            foreach (Issue i in Issues)
+            {
                 if (i.ProjectId == ProjectID)
                 {
 
@@ -210,8 +220,10 @@ namespace P3
 
             return IssuesByDiscover;
         }
-        public Issue GetUserByID(int ID) {
-            foreach(Issue i in Issues) {
+        public Issue GetUserByID(int ID)
+        {
+            foreach (Issue i in Issues)
+            {
                 if (i.ProjectId == ID)
                 {
                     return i;
