@@ -25,6 +25,7 @@ namespace P3
         private List<Issue> Issues = new List<Issue>();
         private List<AppUser> users = new List<AppUser>();
         private List<Feature> Features = new List<Feature>();
+        private List<Requirement> Requirements = new List<Requirement>;
 
         DialogResult result = DialogResult.None;
         public FormMain()
@@ -253,6 +254,23 @@ namespace P3
             {
                 MessageBox.Show("There are no features to modify.");
             }
+        }
+
+        //For add in a new requirement
+        private void createToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCreateRequirement createRequirement = new FormCreateRequirement();
+            createRequirement.ShowDialog();
+        }
+
+        private void modifyToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //FormModifyRequirement
+        }
+
+        private void removeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //FormRemoveRequirement
         }
     }
 }
