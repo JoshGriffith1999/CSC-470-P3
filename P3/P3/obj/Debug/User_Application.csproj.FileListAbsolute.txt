@@ -69,3 +69,4 @@ C:\Users\DSU\Desktop\CSC-470-P3\P3\P3\obj\Debug\P3.FormRemoveFeature.resources
 C:\Users\DSU\Desktop\CSC-470-P3\P3\P3\obj\Debug\P3.FormRemoveIssue.resources
 C:\Users\DSU\Desktop\CSC-470-P3\P3\P3\obj\Debug\P3.FormSelectFeature.resources
 C:\Users\DSU\Desktop\CSC-470-P3\P3\P3\obj\Debug\P3.FormSelectIssue.resources
+C:\Users\DSU\Desktop\CSC-470-P3\P3\P3\obj\Debug\P3.FormCreateRequirement.resources

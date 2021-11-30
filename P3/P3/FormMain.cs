@@ -16,6 +16,8 @@ namespace P3
         FakeProjectRepository ProjectRepository = new FakeProjectRepository();
         FakeIssueRepository IssueRepository = new FakeIssueRepository();
         FakeFeatureRepository FeatureRepository = new FakeFeatureRepository();
+        FakeRequirementRepositpry RequirementRepositpry = new FakeRequirementRepositpry();
+
         Issue IssueInUse = new Issue();
         Project ProjectInUse = new Project();
         Feature FeatureInUse = new Feature();
@@ -25,7 +27,7 @@ namespace P3
         private List<Issue> Issues = new List<Issue>();
         private List<AppUser> users = new List<AppUser>();
         private List<Feature> Features = new List<Feature>();
-        private List<Requirement> Requirements = new List<Requirement>;
+        private List<Requirement> Requirements = new List<Requirement>();
 
         DialogResult result = DialogResult.None;
         public FormMain()
@@ -259,15 +261,29 @@ namespace P3
         //For add in a new requirement
         private void createToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormCreateRequirement createRequirement = new FormCreateRequirement();
-            createRequirement.ShowDialog();
+            if (Features.Count != 0)
+            {
+                FormCreateRequirement createRequirement = new FormCreateRequirement(FeatureRepository, RequirementRepositpry, Features);
+                createRequirement.ShowDialog();
+                RequirementRepositpry = createRequirement.returnRepo();
+                Requirements = RequirementRepositpry.GetALL();
+            }
+            else {
+                MessageBox.Show("Cannot add in a requirement since there are no features currently");
+            }
+          
         }
 
+        //Used to modify a requirement assciated to a featre
         private void modifyToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            
+            
             //FormModifyRequirement
+
         }
 
+        //Used to remove a requirement assiciated to a feature
         private void removeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             //FormRemoveRequirement
