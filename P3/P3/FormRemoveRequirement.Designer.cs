@@ -34,8 +34,8 @@ namespace P3
             this.featureComboBox = new System.Windows.Forms.ComboBox();
             this.removeButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.requirementGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.requirementGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // featurelabel
@@ -63,6 +63,7 @@ namespace P3
             this.featureComboBox.Name = "featureComboBox";
             this.featureComboBox.Size = new System.Drawing.Size(474, 21);
             this.featureComboBox.TabIndex = 2;
+            this.featureComboBox.SelectedIndexChanged += new System.EventHandler(this.featureComboBox_SelectedIndexChanged);
             // 
             // removeButton
             // 
@@ -72,6 +73,7 @@ namespace P3
             this.removeButton.TabIndex = 1;
             this.removeButton.Text = "Remove";
             this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // cancelButton
             // 
@@ -81,21 +83,22 @@ namespace P3
             this.cancelButton.TabIndex = 2;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // dataGridView1
+            // requirementGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(155, 89);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(471, 155);
-            this.dataGridView1.TabIndex = 5;
+            this.requirementGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.requirementGridView.Location = new System.Drawing.Point(155, 89);
+            this.requirementGridView.Name = "requirementGridView";
+            this.requirementGridView.Size = new System.Drawing.Size(471, 155);
+            this.requirementGridView.TabIndex = 5;
             // 
             // FormRemoveRequirement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.requirementGridView);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.featureComboBox);
@@ -103,7 +106,7 @@ namespace P3
             this.Controls.Add(this.featurelabel);
             this.Name = "FormRemoveRequirement";
             this.Text = "FormRemoveRequirement";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requirementGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,6 +119,6 @@ namespace P3
         private System.Windows.Forms.ComboBox featureComboBox;
         private System.Windows.Forms.Button removeButton;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView requirementGridView;
     }
 }

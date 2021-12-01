@@ -300,15 +300,17 @@ namespace P3
             Requirement SelectedRequirement = new Requirement();
             if (Features.Count != 0)
             {
-                FormSelectRequirement SelectRequirement = new FormSelectRequirement(RequirementRepositpry, FeatureRepository, Features, Requirements);
-                SelectRequirement.ShowDialog();
-                SelectedRequirement = SelectRequirement.getSelectedRequirement();
+                FormRemoveRequirement FormRemoveRequirement = new FormRemoveRequirement(FeatureRepository, RequirementRepositpry, Features, Requirements);
+                FormRemoveRequirement.ShowDialog();
+
+                RequirementRepositpry = FormRemoveRequirement.returnRepo();
+
             }
             else
             {
                 MessageBox.Show("Cannot add in a requirement since there are no features currently");
             }
-            //FormRemoveRequirement
         }
     }
+    
 }
