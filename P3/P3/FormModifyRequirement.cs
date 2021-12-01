@@ -12,13 +12,14 @@ namespace P3
 {
     public partial class FormModifyRequirement : Form
     {
-        Feature Feature = new Feature();
+        List<Feature> FeatureList = new List<Feature>();
         Requirement Requirement = new Requirement();
-        public FormModifyRequirement(Feature feature, Requirement requirement)
+        Feature Feature = new Feature();
+        public FormModifyRequirement(List<Feature> featureList, Requirement requirement, FakeFeatureRepository FR, FakeRequirementRepositpry RR)
         {
             InitializeComponent();
             CenterToParent();
-            Feature = feature;
+            FeatureList = featureList;
             comboBox1.Text = Feature.Title.Trim();
             statementLabel.Text = requirement.Statement.Trim();
         }
