@@ -15,10 +15,14 @@ namespace P3
         FakeFeatureRepository FeatureRepo = new FakeFeatureRepository();
         FakeRequirementRepositpry RequirementRepo = new FakeRequirementRepositpry();
         List<Feature> Features = new List<Feature>();
+        List<Requirement> Requirements = new List<Requirement>();
         public FormSelectRequirement(FakeRequirementRepositpry R, FakeFeatureRepository F, List<Feature> FL, List<Requirement> RL)
         {
             InitializeComponent();
             CenterToParent();
+            this.RequirementsDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            RequirementsDataGridView.Enabled = false;
+            Requirements = RL;
         }
 
         private void selectRequirementButton_Click(object sender, EventArgs e)
@@ -33,7 +37,13 @@ namespace P3
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            RequirementsDataGridView.Enabled = true;
+            
+            foreach (Requirement i in Requirements)
+            {
+                string[] row = new string[] { i.ID.ToString(), i.Statement };
+                RequirementsDataGridView.Rows.Add(row);
+            }
         }
     }
 }
