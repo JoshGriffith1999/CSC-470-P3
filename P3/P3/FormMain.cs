@@ -314,9 +314,7 @@ namespace P3
             {
                 MessageBox.Show("Cannot remove a requirement since there are no features currently");
             }
-            //FormRemoveRequirement
-            FormRemoveRequirement removeRequirement = new FormRemoveRequirement();
-            removeRequirement.ShowDialog();
+
         }
     }
 }
