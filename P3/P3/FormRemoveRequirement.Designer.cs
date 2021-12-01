@@ -29,37 +29,81 @@ namespace P3
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.featurelabel = new System.Windows.Forms.Label();
+            this.requirementLabel = new System.Windows.Forms.Label();
+            this.featureComboBox = new System.Windows.Forms.ComboBox();
+            this.removeButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // featurelabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Confirmation";
+            this.featurelabel.AutoSize = true;
+            this.featurelabel.Location = new System.Drawing.Point(74, 43);
+            this.featurelabel.Name = "featurelabel";
+            this.featurelabel.Size = new System.Drawing.Size(43, 13);
+            this.featurelabel.TabIndex = 0;
+            this.featurelabel.Text = "Feature";
             // 
-            // textBox1
+            // requirementLabel
             // 
-            this.textBox1.Location = new System.Drawing.Point(41, 79);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(716, 22);
-            this.textBox1.TabIndex = 1;
+            this.requirementLabel.AutoSize = true;
+            this.requirementLabel.Location = new System.Drawing.Point(77, 89);
+            this.requirementLabel.Name = "requirementLabel";
+            this.requirementLabel.Size = new System.Drawing.Size(72, 13);
+            this.requirementLabel.TabIndex = 1;
+            this.requirementLabel.Text = "Requirements";
+            // 
+            // featureComboBox
+            // 
+            this.featureComboBox.FormattingEnabled = true;
+            this.featureComboBox.Location = new System.Drawing.Point(152, 43);
+            this.featureComboBox.Name = "featureComboBox";
+            this.featureComboBox.Size = new System.Drawing.Size(474, 21);
+            this.featureComboBox.TabIndex = 2;
+            // 
+            // removeButton
+            // 
+            this.removeButton.Location = new System.Drawing.Point(551, 304);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(75, 23);
+            this.removeButton.TabIndex = 1;
+            this.removeButton.Text = "Remove";
+            this.removeButton.UseVisualStyleBackColor = true;
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Location = new System.Drawing.Point(401, 304);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 2;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(155, 89);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(471, 155);
+            this.dataGridView1.TabIndex = 5;
             // 
             // FormRemoveRequirement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 269);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.removeButton);
+            this.Controls.Add(this.featureComboBox);
+            this.Controls.Add(this.requirementLabel);
+            this.Controls.Add(this.featurelabel);
             this.Name = "FormRemoveRequirement";
             this.Text = "FormRemoveRequirement";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -67,7 +111,11 @@ namespace P3
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label featurelabel;
+        private System.Windows.Forms.Label requirementLabel;
+        private System.Windows.Forms.ComboBox featureComboBox;
+        private System.Windows.Forms.Button removeButton;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
