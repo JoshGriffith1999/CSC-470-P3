@@ -292,6 +292,8 @@ namespace P3
             //FormModifyRequirement
             FormModifyRequirement modifyRequirement = new FormModifyRequirement(Features,SelectedRequirement,FeatureRepository,RequirementRepositpry);
             modifyRequirement.ShowDialog();
+            RequirementRepositpry = modifyRequirement.returnRepo();
+            Requirements = RequirementRepositpry.GetALL(ProjectInUse.ID);
         }
 
         //Used to remove a requirement assiciated to a feature

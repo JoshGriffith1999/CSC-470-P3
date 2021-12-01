@@ -14,12 +14,14 @@ namespace P3
     {
         List<Feature> FeatureList = new List<Feature>();
         Requirement Requirement = new Requirement();
+        FakeRequirementRepositpry ReqRepo = new FakeRequirementRepositpry();
         Feature Feature = new Feature();
         public FormModifyRequirement(List<Feature> featureList, Requirement requirement, FakeFeatureRepository FR, FakeRequirementRepositpry RR)
         {
             InitializeComponent();
             CenterToParent();
             FeatureList = featureList;
+            ReqRepo = RR;
 
             foreach (Feature feature in FeatureList)
             {
@@ -38,6 +40,11 @@ namespace P3
 
         }
 
+        public FakeRequirementRepositpry returnRepo()
+        {
+            return ReqRepo;
+        }
+
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
@@ -50,6 +57,10 @@ namespace P3
             {
                 MessageBox.Show("Statement must have a value");
             }
+            else if(comboBox1.SelectedItem == null)
+            {
+                MessageBox.Show("No Feature Selected");
+            } 
             else
             {
                 Feature.Title = comboBox1.SelectedItem.ToString();
