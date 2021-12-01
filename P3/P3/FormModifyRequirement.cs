@@ -20,15 +20,16 @@ namespace P3
             InitializeComponent();
             CenterToParent();
             FeatureList = featureList;
-            foreach (Feature f in FeatureList)
+
+            foreach (Feature feature in FeatureList)
             {
-                if (f.id == requirement.FeatureID)
+                comboBox1.Items.Add(feature.Title);
+                if (requirement.FeatureID == feature.id)
                 {
-                    Feature = f;
-                    comboBox1.Text = f.Title.ToString();
+                    Feature = feature;
                 }
-                //comment
             }
+            comboBox1.SelectedItem = Feature.Title;
             textBox1.Text = requirement.Statement.Trim();
         }
 
