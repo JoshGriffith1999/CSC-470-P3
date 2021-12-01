@@ -15,6 +15,7 @@ namespace P3
         public string DUPLICATE_TITLE_ERROR = "Title must be unique";
         public string EMPTY_TITLE_ERROR = "Title must have a value";
         public string NOT_FOUND_ERROR = "Feature not found";
+        public string NO_CHANGES_MADE_ERROR = "No Changes have been made";
         public string INVALID_PROJECT_ID_ERROR = "Invalid Project ID for feature";
 
         /********************************************8*/
@@ -81,7 +82,8 @@ namespace P3
             //Test to see if there is a duplicate title
             foreach (Feature x in features)
             {
-                if (feature.Title == x.Title)
+                
+                if (feature.Title == x.Title && feature.id != x.id)
                 {
                     return DUPLICATE_TITLE_ERROR;
                 }
