@@ -288,9 +288,10 @@ namespace P3
             {
                 MessageBox.Show("Cannot add in a requirement since there are no features currently");
             }
-            
-            //FormModifyRequirement
 
+            //FormModifyRequirement
+            FormModifyRequirement modifyRequirement = new FormModifyRequirement(Features,SelectedRequirement,FeatureRepository,RequirementRepositpry);
+            modifyRequirement.ShowDialog();
         }
 
         //Used to remove a requirement assiciated to a feature

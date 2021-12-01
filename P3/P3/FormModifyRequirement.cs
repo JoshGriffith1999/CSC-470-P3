@@ -20,8 +20,15 @@ namespace P3
             InitializeComponent();
             CenterToParent();
             FeatureList = featureList;
-            comboBox1.Text = Feature.Title.Trim();
-            statementLabel.Text = requirement.Statement.Trim();
+            foreach (Feature f in FeatureList)
+            {
+                if (f.id == requirement.FeatureID)
+                {
+                    Feature = f;
+                    comboBox1.Text = f.Title.ToString();
+                }
+            }
+            textBox1.Text = requirement.Statement.Trim();
         }
 
         private void FormModifyRequirement_Load(object sender, EventArgs e)
@@ -43,6 +50,7 @@ namespace P3
             }
             else
             {
+                Feature.Title = comboBox1.SelectedItem.ToString();
                 Requirement.FeatureID = Feature.id;
                 Requirement.Statement = textBox1.Text.Trim();
                 this.DialogResult = DialogResult.OK;
