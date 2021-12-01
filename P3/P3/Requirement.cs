@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P3
 {
-    class Requirement
+    public class Requirement
     {
         public int ID;
         public int ProjectID;

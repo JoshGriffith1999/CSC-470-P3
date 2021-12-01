@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P3
 {
-    class FakeRequirementRepositpry : IRequirementRepository
+    public class FakeRequirementRepositpry : IRequirementRepository
     {
         private List<Requirement> requirements;
 
