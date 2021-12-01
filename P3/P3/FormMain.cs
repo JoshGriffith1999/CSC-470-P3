@@ -263,7 +263,7 @@ namespace P3
         {
             if (Features.Count != 0)
             {
-                FormCreateRequirement createRequirement = new FormCreateRequirement(FeatureRepository, RequirementRepositpry, Features);
+                FormCreateRequirement createRequirement = new FormCreateRequirement(FeatureRepository, RequirementRepositpry, Features, Requirements);
                 createRequirement.ShowDialog();
                 RequirementRepositpry = createRequirement.returnRepo();
                 Requirements = RequirementRepositpry.GetALL(ProjectInUse.ID);

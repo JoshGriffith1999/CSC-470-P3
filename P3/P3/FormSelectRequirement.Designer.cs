@@ -31,11 +31,13 @@ namespace P3
         {
             this.featureLabel = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.requirementsLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.selectRequirementButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.RequirementsDataGridView = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Requirement = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.RequirementsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // featureLabel
@@ -57,15 +59,6 @@ namespace P3
             this.comboBox1.Text = "\"<Make Selection>\"";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
-            // 
             // requirementsLabel
             // 
             this.requirementsLabel.AutoSize = true;
@@ -74,14 +67,6 @@ namespace P3
             this.requirementsLabel.Size = new System.Drawing.Size(96, 17);
             this.requirementsLabel.TabIndex = 3;
             this.requirementsLabel.Text = "Requirements";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(113, 94);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(599, 275);
-            this.textBox1.TabIndex = 4;
             // 
             // selectRequirementButton
             // 
@@ -103,20 +88,47 @@ namespace P3
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
+            // RequirementsDataGridView
+            // 
+            this.RequirementsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.RequirementsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Requirement});
+            this.RequirementsDataGridView.Location = new System.Drawing.Point(110, 92);
+            this.RequirementsDataGridView.Name = "RequirementsDataGridView";
+            this.RequirementsDataGridView.RowHeadersWidth = 51;
+            this.RequirementsDataGridView.RowTemplate.Height = 24;
+            this.RequirementsDataGridView.Size = new System.Drawing.Size(602, 294);
+            this.RequirementsDataGridView.TabIndex = 7;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.Width = 75;
+            // 
+            // Requirement
+            // 
+            this.Requirement.HeaderText = "Requirement";
+            this.Requirement.MinimumWidth = 6;
+            this.Requirement.Name = "Requirement";
+            this.Requirement.Width = 400;
+            // 
             // FormSelectRequirement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.RequirementsDataGridView);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.selectRequirementButton);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.requirementsLabel);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.featureLabel);
             this.Name = "FormSelectRequirement";
             this.Text = "FormSelectRequirement";
+            ((System.ComponentModel.ISupportInitialize)(this.RequirementsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,10 +138,11 @@ namespace P3
 
         private System.Windows.Forms.Label featureLabel;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label requirementsLabel;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button selectRequirementButton;
         private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.DataGridView RequirementsDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Requirement;
     }
 }
