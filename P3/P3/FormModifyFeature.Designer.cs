@@ -48,7 +48,7 @@
             this.TitleTextBox.Location = new System.Drawing.Point(98, 51);
             this.TitleTextBox.Name = "TitleTextBox";
             this.TitleTextBox.Size = new System.Drawing.Size(352, 22);
-            this.TitleTextBox.TabIndex = 1;
+            this.TitleTextBox.TabIndex = 0;
             // 
             // ModifyFeatureButton
             // 
@@ -65,14 +65,14 @@
             this.CancelButton.Location = new System.Drawing.Point(193, 99);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(118, 23);
-            this.CancelButton.TabIndex = 3;
+            this.CancelButton.TabIndex = 1;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click_1);
             // 
             // FormModifyFeature
             // 
-            this.ClientSize = new System.Drawing.Size(651, 414);
+            this.ClientSize = new System.Drawing.Size(651, 159);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.ModifyFeatureButton);
             this.Controls.Add(this.TitleTextBox);

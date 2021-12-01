@@ -40,7 +40,7 @@ namespace P3
             // RequirementTextBox
             // 
             this.RequirementTextBox.Location = new System.Drawing.Point(201, 174);
-            this.RequirementTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RequirementTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.RequirementTextBox.Multiline = true;
             this.RequirementTextBox.Name = "RequirementTextBox";
             this.RequirementTextBox.Size = new System.Drawing.Size(676, 152);
@@ -69,7 +69,7 @@ namespace P3
             // AddRequirementButton
             // 
             this.AddRequirementButton.Location = new System.Drawing.Point(779, 366);
-            this.AddRequirementButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddRequirementButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddRequirementButton.Name = "AddRequirementButton";
             this.AddRequirementButton.Size = new System.Drawing.Size(100, 28);
             this.AddRequirementButton.TabIndex = 3;
@@ -80,7 +80,7 @@ namespace P3
             // CancelButton
             // 
             this.CancelButton.Location = new System.Drawing.Point(575, 366);
-            this.CancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(100, 28);
             this.CancelButton.TabIndex = 4;
@@ -90,13 +90,13 @@ namespace P3
             // 
             // FeatureComboBox
             // 
+            this.FeatureComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FeatureComboBox.FormattingEnabled = true;
             this.FeatureComboBox.Location = new System.Drawing.Point(201, 108);
-            this.FeatureComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FeatureComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.FeatureComboBox.Name = "FeatureComboBox";
             this.FeatureComboBox.Size = new System.Drawing.Size(676, 24);
             this.FeatureComboBox.TabIndex = 5;
-            this.FeatureComboBox.Text = "Select A Feature";
             this.FeatureComboBox.SelectedIndexChanged += new System.EventHandler(this.FeatureComboBox_SelectedIndexChanged);
             // 
             // FormCreateRequirement
@@ -110,7 +110,7 @@ namespace P3
             this.Controls.Add(this.RequirementLabel);
             this.Controls.Add(this.FeatureLabel);
             this.Controls.Add(this.RequirementTextBox);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCreateRequirement";
             this.Text = "Add Requirement";
             this.ResumeLayout(false);
