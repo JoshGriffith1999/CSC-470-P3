@@ -27,9 +27,9 @@ namespace P3
             }
 
             //Tetsn if state is a duplicate
-            for (int x = 0; x < requirements.Count; x++)
+            foreach (Requirement x in requirements)
             {
-                if (requirements[x].Statement == requirement.Statement)
+                if (x.Statement == requirement.Statement)
                 {
                     return DUPLICATE_STATEMENT_ERROR;
                 }
@@ -54,11 +54,11 @@ namespace P3
         {
             List<Requirement> requirement = new List<Requirement>();
 
-            for (int x = 0; x < requirements.Count; x++)
+            foreach (Requirement x in requirements)
             {
-                if (requirements[x].ProjectID == ProjectID)
+                if (x.ProjectID == ProjectID)
                 {
-                    requirement.Append(requirements[x]);
+                    requirement.Add(x);
                 }
             }
 
@@ -82,11 +82,11 @@ namespace P3
 
             bool changed = false;
 
-            for (int x = 0; x < requirements.Count; x++)
+            foreach (Requirement x in requirements)
             {
-                if (requirements[x].ID == requirement.ID)
+                if (x.ID == requirement.ID)
                 {
-                    requirements[x] = requirement;
+                    x.Statement = requirement.Statement;
                     changed = true;
                     break;
                 }
@@ -104,11 +104,11 @@ namespace P3
             requirement.Statement = REQUIREMENT_NOT_FOUND_ERROR;
 
 
-            for (int x = 0; x < requirements.Count; x++)
+            foreach (Requirement x in requirements)
             {
-                if (requirements[x].ID == RequirementID)
+                if (x.ID == RequirementID)
                 {
-                    return requirements[x];
+                    return x;
                 }
             }
 
@@ -118,9 +118,9 @@ namespace P3
         {
             int count = 0;
 
-            for (int x = 0; x < requirements.Count; x++)
+            foreach (Requirement x in requirements)
             {
-                if (requirements[x].FeatureID == featureID)
+                if (x.FeatureID == featureID)
                 {
                     count += 1;
                 }
@@ -131,11 +131,11 @@ namespace P3
         public void RemoveByFeature(int featureID)
         {
 
-            for (int x = 0; x < requirements.Count; x++)
+            foreach (Requirement x in requirements)
             {
-                if (requirements[x].FeatureID == featureID)
+                if (x.FeatureID == featureID)
                 {
-                    requirements.Remove(requirements[x]);
+                    requirements.Remove(x);
                 }
             }
         }
