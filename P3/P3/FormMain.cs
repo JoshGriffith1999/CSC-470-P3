@@ -266,7 +266,7 @@ namespace P3
                 FormCreateRequirement createRequirement = new FormCreateRequirement(FeatureRepository, RequirementRepositpry, Features);
                 createRequirement.ShowDialog();
                 RequirementRepositpry = createRequirement.returnRepo();
-                Requirements = RequirementRepositpry.GetALL();
+                Requirements = RequirementRepositpry.GetALL(ProjectInUse.ID);
             }
             else {
                 MessageBox.Show("Cannot add in a requirement since there are no features currently");

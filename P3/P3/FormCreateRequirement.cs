@@ -30,6 +30,7 @@ namespace P3
         {
             InitializeComponent();
             CenterToScreen();
+            RequirementTextBox.Enabled = false;
 
             FeatureRepository = F;
             RequirementRepositpory = R;
@@ -56,6 +57,11 @@ namespace P3
         public FakeRequirementRepositpry returnRepo() {
 
             return RequirementRepositpory;
+        }
+
+        private void FeatureComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RequirementTextBox.Enabled= true;
         }
     }
 }
