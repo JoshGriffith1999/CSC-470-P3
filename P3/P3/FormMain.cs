@@ -168,9 +168,9 @@ namespace P3
                 Issue selectedIssue = new Issue();
                 selectedIssue = selectIssue.getSelectedIssue();
                 //selectedIssue now contains a selected Issue
-                FormModifyIssue modifiedIssue = new FormModifyIssue(selectedIssue, IssueRepository, Issues, UserRepository, ProjectInUse.ID, users);
                 if (result != DialogResult.Cancel)
                 {
+                    FormModifyIssue modifiedIssue = new FormModifyIssue(selectedIssue, IssueRepository, Issues, UserRepository, ProjectInUse.ID, users);
                     modifiedIssue.ShowDialog();
                 }
             }
@@ -192,9 +192,9 @@ namespace P3
                 Issue selectedIssue = new Issue();
                 selectedIssue = selectIssue.getSelectedIssue();
                 //selectedIssue now contains a selected Issue
-                FormRemoveIssue modifiedIssue = new FormRemoveIssue(selectedIssue, IssueRepository, Issues, UserRepository, ProjectInUse.ID, users);
                 if (result != DialogResult.Cancel)
                 {
+                    FormRemoveIssue modifiedIssue = new FormRemoveIssue(selectedIssue, IssueRepository, Issues, UserRepository, ProjectInUse.ID, users);
                     modifiedIssue.ShowDialog();
                 }
             }
@@ -224,9 +224,9 @@ namespace P3
                 Feature selectedFeature = new Feature();
                 selectedFeature = selectFeature.getSelectedFeature();
                 //selectedFeature now contains a selected Feature
-                FormModifyFeature modifiedFeature = new FormModifyFeature(ProjectInUse, FeatureRepository, selectedFeature);
                 if (result != DialogResult.Cancel)
                 {
+                    FormModifyFeature modifiedFeature = new FormModifyFeature(ProjectInUse, FeatureRepository, selectedFeature);
                     modifiedFeature.ShowDialog();
                 }
             }
@@ -246,9 +246,9 @@ namespace P3
                 Feature selectedFeature = new Feature();
                 selectedFeature = selectFeature.getSelectedFeature();
                 //selectedFeature now contains a selected Feature
-                FormRemoveFeature removedFeature = new FormRemoveFeature(selectedFeature, FeatureRepository);
                 if (result != DialogResult.Cancel)
                 {
+                    FormRemoveFeature removedFeature = new FormRemoveFeature(selectedFeature, FeatureRepository);
                     removedFeature.ShowDialog();
                 }
             }
@@ -290,10 +290,13 @@ namespace P3
             }
 
             //FormModifyRequirement
-            FormModifyRequirement modifyRequirement = new FormModifyRequirement(Features,SelectedRequirement,FeatureRepository,RequirementRepositpry);
-            modifyRequirement.ShowDialog();
-            RequirementRepositpry = modifyRequirement.returnRepo();
-            Requirements = RequirementRepositpry.GetALL(ProjectInUse.ID);
+            if (result != DialogResult.Cancel)
+            {
+                FormModifyRequirement modifyRequirement = new FormModifyRequirement(Features, SelectedRequirement, FeatureRepository, RequirementRepositpry);
+                modifyRequirement.ShowDialog();
+                RequirementRepositpry = modifyRequirement.returnRepo();
+                Requirements = RequirementRepositpry.GetALL(ProjectInUse.ID);
+            }
         }
 
         //Used to remove a requirement assiciated to a feature
@@ -311,8 +314,11 @@ namespace P3
                 MessageBox.Show("Cannot remove a requirement since there are no features currently");
             }
             //FormRemoveRequirement
-            FormRemoveRequirement removeRequirement = new FormRemoveRequirement();
-            removeRequirement.ShowDialog();
+            if (result != DialogResult.Cancel)
+            {
+                FormRemoveRequirement removeRequirement = new FormRemoveRequirement();
+                removeRequirement.ShowDialog();
+            }
         }
     }
 }
