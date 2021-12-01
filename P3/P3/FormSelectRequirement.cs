@@ -23,6 +23,15 @@ namespace P3
             this.RequirementsDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             RequirementsDataGridView.Enabled = false;
             Requirements = RL;
+            FeatureRepo = F;
+            RequirementRepo = R;
+            Features = FL;
+            Requirements = RL;
+
+            foreach (Feature feature in FL)
+            {
+                comboBox1.Items.Add(feature.Title);
+            }
         }
 
         private void selectRequirementButton_Click(object sender, EventArgs e)
