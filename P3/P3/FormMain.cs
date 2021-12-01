@@ -286,7 +286,7 @@ namespace P3
             }
             else
             {
-                MessageBox.Show("Cannot add in a requirement since there are no features currently");
+                MessageBox.Show("Cannot modify a requirement since there are no features currently");
             }
 
             //FormModifyRequirement
@@ -306,9 +306,11 @@ namespace P3
             }
             else
             {
-                MessageBox.Show("Cannot add in a requirement since there are no features currently");
+                MessageBox.Show("Cannot remove a requirement since there are no features currently");
             }
             //FormRemoveRequirement
+            FormRemoveRequirement removeRequirement = new FormRemoveRequirement();
+            removeRequirement.ShowDialog();
         }
     }
 }
