@@ -279,7 +279,7 @@ namespace P3
         {
             if (Features.Count != 0)
             {
-                FormSelectRequirement SelectRequirement = new FormSelectRequirement(RequirementRepositpry, FeatureRepository,Features,Requirements);
+                FormSelectRequirement SelectRequirement = new FormSelectRequirement(RequirementRepositpry, FeatureRepository,Features);
                 SelectRequirement.ShowDialog();
             }
             else
