@@ -8,14 +8,14 @@ namespace P3
 {
     public class FakeRequirementRepositpry : IRequirementRepository
     {
-        private List<Requirement> requirements;
+        private List<Requirement> requirements= new List<Requirement>();
 
-        string NO_ERROR = "";
-        string DUPLICATE_STATEMENT_ERROR = "Statements must be unique";
-        string EMPYT_STATEMENT_ERROR = "Statement must have a value";
-        string REQUIREMENT_NOT_FOUND_ERROR = "Requirement does not exist";
-        string MISSING_FEATRUREID_ERROR = "Must select a feature for this requirement";
-        string MISSING_PROJECTID_ERROR = "Must select a project for this requirement";
+        public string NO_ERROR = "";
+        public string DUPLICATE_STATEMENT_ERROR = "Statements must be unique";
+        public string EMPYT_STATEMENT_ERROR = "Statement must have a value";
+        public string REQUIREMENT_NOT_FOUND_ERROR = "Requirement does not exist";
+        public string MISSING_FEATRUREID_ERROR = "Must select a feature for this requirement";
+        public string MISSING_PROJECTID_ERROR = "Must select a project for this requirement";
 
         public string Add(Requirement requirement)
         {
@@ -52,18 +52,7 @@ namespace P3
         }
         public List<Requirement> GetALL(int ProjectID)
         {
-            List<Requirement> requirement = new List<Requirement>();
-
-            foreach (Requirement x in requirements)
-            {
-                if (x.ProjectID == ProjectID)
-                {
-                    requirement.Add(x);
-                }
-            }
-
-            return requirement;
-
+            return requirements;
         }
         public string Remove(Requirement requirement)
         {
