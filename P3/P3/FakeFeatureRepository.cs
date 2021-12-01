@@ -72,6 +72,20 @@ namespace P3
         {
 
             bool successfullChange = false;
+            //Test to see if title is empty
+            if (feature.Title == "")
+            {
+                return EMPTY_TITLE_ERROR;
+            }
+
+            //Test to see if there is a duplicate title
+            foreach (Feature x in features)
+            {
+                if (feature.Title == x.Title)
+                {
+                    return DUPLICATE_TITLE_ERROR;
+                }
+            }
             foreach (Feature x in features)
             {
 
