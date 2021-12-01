@@ -246,16 +246,41 @@ namespace P3
                 Feature selectedFeature = new Feature();
                 selectedFeature = selectFeature.getSelectedFeature();
                 //selectedFeature now contains a selected Feature
-                FormRemoveFeature removedFeature = new FormRemoveFeature(selectedFeature, FeatureRepository);
-                if (result != DialogResult.Cancel)
+
+                List<Requirement> temp = RequirementRepositpry.GetALL(selectedFeature.id);
+
+                if (temp.Any() == true)
                 {
-                    removedFeature.ShowDialog();
+
+                    DialogResult result = MessageBox.Show("Are you sure that you want to remove this feature considering that there are requirments " +
+                        "attached to this feature?", "Attention", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        FormRemoveFeature removedFeature = new FormRemoveFeature(selectedFeature, FeatureRepository);
+                        if (result != DialogResult.Cancel)
+                        {
+                            removedFeature.ShowDialog();
+                        }
+                    }
+                }
+                else {
+
+                    FormRemoveFeature removedFeature = new FormRemoveFeature(selectedFeature, FeatureRepository);
+                    if (result != DialogResult.Cancel)
+                    {
+                        removedFeature.ShowDialog();
+                    }
                 }
             }
             else
             {
                 MessageBox.Show("There are no features to modify.");
             }
+
+
+
+
         }
 
         //For add in a new requirement
