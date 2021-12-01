@@ -266,7 +266,7 @@ namespace P3
                 FormCreateRequirement createRequirement = new FormCreateRequirement(FeatureRepository, RequirementRepositpry, Features);
                 createRequirement.ShowDialog();
                 RequirementRepositpry = createRequirement.returnRepo();
-                Requirements = RequirementRepositpry.GetALL();
+                Requirements = RequirementRepositpry.GetALL(ProjectInUse.ID);
             }
             else {
                 MessageBox.Show("Cannot add in a requirement since there are no features currently");
@@ -277,7 +277,15 @@ namespace P3
         //Used to modify a requirement assciated to a featre
         private void modifyToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            
+            if (Features.Count != 0)
+            {
+                FormSelectRequirement SelectRequirement = new FormSelectRequirement();
+                SelectRequirement.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Cannot add in a requirement since there are no features currently");
+            }
             
             //FormModifyRequirement
 

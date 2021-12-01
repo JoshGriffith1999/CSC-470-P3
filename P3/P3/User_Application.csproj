@@ -169,6 +169,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSelectRequirement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectRequirement.Designer.cs">
+      <DependentUpon>FormSelectRequirement.cs</DependentUpon>
+    </Compile>
     <Compile Include="IAppUserRepository.cs" />
     <Compile Include="IFeatureRepository.cs" />
     <Compile Include="IIssueRepository.cs" />
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSelectProject.resx">
       <DependentUpon>FormSelectProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectRequirement.resx">
+      <DependentUpon>FormSelectRequirement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
