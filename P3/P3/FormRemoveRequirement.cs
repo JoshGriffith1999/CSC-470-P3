@@ -39,5 +39,50 @@ namespace P3
                 featureComboBox.Items.Add(x.Title);
             }
         }
+
+        private void featureComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            requirementGridView.Enabled = true;
+
+            foreach (Requirement i in requirements)
+            {
+                string[] row = new string[] { i.ID.ToString(), i.Statement };
+                requirementGridView.Rows.Add(row);
+            }
+        }
+
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            Requirement SelectedRequirement = new Requirement();
+            DataGridViewSelectedRowCollection rows = requirementGridView.SelectedRows;
+            string selectedCell = (string)rows[0].Cells[0].Value;
+
+            foreach (Requirement i in requirements)
+            {
+                if (i.ID.ToString() == selectedCell)
+                {
+                    SelectedRequirement = i;
+                }
+            }
+
+            DialogResult result = MessageBox.Show("Are you sure that you want to remove this requirement?", "Attention", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                Requirements.Remove(SelectedRequirement);
+            }
+            else {
+                this.Close();
+            }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        public FakeRequirementRepositpry returnRepo() {
+            return Requirements;
+        }
     }
 }
