@@ -15,7 +15,7 @@ namespace P3
         FakeFeatureRepository FeatureRepo = new FakeFeatureRepository();
         FakeRequirementRepositpry RequirementRepo = new FakeRequirementRepositpry();
         List<Feature> Features = new List<Feature>();
-        public FormSelectRequirement(FakeRequirementRepositpry R, FakeFeatureRepository F, List<Feature> FL, List<Requirement> RL)
+        public FormSelectRequirement(FakeRequirementRepositpry R, FakeFeatureRepository F, List<Feature> FL)
         {
             InitializeComponent();
             CenterToParent();
