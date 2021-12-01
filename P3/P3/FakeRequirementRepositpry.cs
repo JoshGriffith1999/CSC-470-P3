@@ -47,7 +47,7 @@ namespace P3
                 return MISSING_FEATRUREID_ERROR;
             }
 
-            requirements.Append(requirement);
+            requirements.Add(requirement);
             return NO_ERROR;
         }
         public List<Requirement> GetALL(int ProjectID)

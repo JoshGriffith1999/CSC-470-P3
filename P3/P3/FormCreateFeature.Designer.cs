@@ -36,49 +36,54 @@
             // 
             // TitleTextBox
             // 
-            this.TitleTextBox.Location = new System.Drawing.Point(91, 59);
+            this.TitleTextBox.Location = new System.Drawing.Point(68, 48);
+            this.TitleTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TitleTextBox.Name = "TitleTextBox";
-            this.TitleTextBox.Size = new System.Drawing.Size(408, 22);
+            this.TitleTextBox.Size = new System.Drawing.Size(307, 20);
             this.TitleTextBox.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 59);
+            this.label1.Location = new System.Drawing.Point(26, 48);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 17);
+            this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Title:";
             // 
             // CreateFeatureButton
             // 
-            this.CreateFeatureButton.Location = new System.Drawing.Point(382, 101);
+            this.CreateFeatureButton.Location = new System.Drawing.Point(286, 82);
+            this.CreateFeatureButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CreateFeatureButton.Name = "CreateFeatureButton";
-            this.CreateFeatureButton.Size = new System.Drawing.Size(117, 23);
-            this.CreateFeatureButton.TabIndex = 2;
+            this.CreateFeatureButton.Size = new System.Drawing.Size(88, 19);
+            this.CreateFeatureButton.TabIndex = 1;
             this.CreateFeatureButton.Text = "Create Feature";
             this.CreateFeatureButton.UseVisualStyleBackColor = true;
             this.CreateFeatureButton.Click += new System.EventHandler(this.CreateFeatureButton_Click);
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(233, 101);
+            this.CancelButton.Location = new System.Drawing.Point(175, 82);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(117, 23);
-            this.CancelButton.TabIndex = 3;
+            this.CancelButton.Size = new System.Drawing.Size(88, 19);
+            this.CancelButton.TabIndex = 2;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // FormCreateFeature
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(577, 172);
+            this.ClientSize = new System.Drawing.Size(433, 140);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.CreateFeatureButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TitleTextBox);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormCreateFeature";
             this.Text = "Create Feature";
             this.ResumeLayout(false);
