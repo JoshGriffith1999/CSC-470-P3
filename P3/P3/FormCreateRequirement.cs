@@ -35,6 +35,7 @@ namespace P3
             FeatureRepository = F;
             RequirementRepositpory = R;
 
+
             foreach (Feature feature in FL) {
                 FeatureComboBox.Items.Add(feature.Title);
             }
@@ -42,9 +43,14 @@ namespace P3
 
         private void AddRequirementButton_Click(object sender, EventArgs e)
         {
-            requirementInUse.ID = 0;
-            requirementInUse.ProjectID = 0;
-            requirementInUse.FeatureID = 0;
+            var selected = FeatureComboBox.SelectedItem;
+
+            Feature temp =  FeatureRepository.GetFeatureByTitle(1, selected.ToString());
+            Requirements = RequirementRepositpory.GetALL(temp.ProjectID);
+
+            requirementInUse.ID = (Requirements[Requirements.Count - 1].ProjectID) + 1;
+            requirementInUse.ProjectID = temp.ProjectID;
+            requirementInUse.FeatureID = temp.id;
             requirementInUse.Statement = this.RequirementTextBox.Text.ToString();
             RequirementRepositpory.Add(requirementInUse);
         }
