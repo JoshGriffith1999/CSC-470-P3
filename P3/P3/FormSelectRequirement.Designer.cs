@@ -90,16 +90,24 @@ namespace P3
             // 
             // RequirementsDataGridView
             // 
+            this.RequirementsDataGridView.AllowUserToAddRows = false;
+            this.RequirementsDataGridView.AllowUserToDeleteRows = false;
+            this.RequirementsDataGridView.AllowUserToResizeColumns = false;
+            this.RequirementsDataGridView.AllowUserToResizeRows = false;
             this.RequirementsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.RequirementsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Requirement});
+            this.RequirementsDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.RequirementsDataGridView.Location = new System.Drawing.Point(110, 92);
+            this.RequirementsDataGridView.MultiSelect = false;
             this.RequirementsDataGridView.Name = "RequirementsDataGridView";
             this.RequirementsDataGridView.RowHeadersWidth = 51;
             this.RequirementsDataGridView.RowTemplate.Height = 24;
+            this.RequirementsDataGridView.RowTemplate.ReadOnly = true;
             this.RequirementsDataGridView.Size = new System.Drawing.Size(602, 294);
             this.RequirementsDataGridView.TabIndex = 7;
+            this.RequirementsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RequirementsDataGridView_CellContentClick);
             // 
             // ID
             // 

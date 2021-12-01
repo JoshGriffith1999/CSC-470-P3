@@ -277,10 +277,12 @@ namespace P3
         //Used to modify a requirement assciated to a featre
         private void modifyToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            Requirement SelectedRequirement = new Requirement();
             if (Features.Count != 0)
             {
-                FormSelectRequirement SelectRequirement = new FormSelectRequirement(RequirementRepositpry, FeatureRepository,Features);
+                FormSelectRequirement SelectRequirement = new FormSelectRequirement(RequirementRepositpry, FeatureRepository,Features, Requirements);
                 SelectRequirement.ShowDialog();
+                SelectedRequirement = SelectRequirement.getSelectedRequirement();
             }
             else
             {
@@ -294,6 +296,17 @@ namespace P3
         //Used to remove a requirement assiciated to a feature
         private void removeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            Requirement SelectedRequirement = new Requirement();
+            if (Features.Count != 0)
+            {
+                FormSelectRequirement SelectRequirement = new FormSelectRequirement(RequirementRepositpry, FeatureRepository, Features, Requirements);
+                SelectRequirement.ShowDialog();
+                SelectedRequirement = SelectRequirement.getSelectedRequirement();
+            }
+            else
+            {
+                MessageBox.Show("Cannot add in a requirement since there are no features currently");
+            }
             //FormRemoveRequirement
         }
     }
