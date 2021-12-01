@@ -299,18 +299,19 @@ namespace P3
         //Used to remove a requirement assiciated to a feature
         private void removeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Requirement SelectedRequirement = new Requirement();
             if (Features.Count != 0)
             {
-                FormSelectRequirement SelectRequirement = new FormSelectRequirement(RequirementRepositpry, FeatureRepository, Features, Requirements);
-                SelectRequirement.ShowDialog();
-                SelectedRequirement = SelectRequirement.getSelectedRequirement();
+                FormRemoveRequirement formRemoveRequirement = new FormRemoveRequirement(FeatureRepository, RequirementRepositpry, Features, Requirements);
+                formRemoveRequirement.ShowDialog();
+
+                RequirementRepositpry = formRemoveRequirement.returnRepo();
+
             }
             else
             {
                 MessageBox.Show("Cannot remove a requirement since there are no features currently");
             }
-            //FormRemoveRequirement
+            //FeatureRepository
             FormRemoveRequirement removeRequirement = new FormRemoveRequirement();
             removeRequirement.ShowDialog();
         }
