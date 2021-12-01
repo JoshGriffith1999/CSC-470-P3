@@ -56,7 +56,7 @@ namespace P3
             this.comboBox1.Location = new System.Drawing.Point(110, 54);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(603, 24);
-            this.comboBox1.TabIndex = 1;
+            this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // requirementsLabel
@@ -73,7 +73,7 @@ namespace P3
             this.selectRequirementButton.Location = new System.Drawing.Point(579, 392);
             this.selectRequirementButton.Name = "selectRequirementButton";
             this.selectRequirementButton.Size = new System.Drawing.Size(133, 32);
-            this.selectRequirementButton.TabIndex = 5;
+            this.selectRequirementButton.TabIndex = 3;
             this.selectRequirementButton.Text = "Select Requirement";
             this.selectRequirementButton.UseVisualStyleBackColor = true;
             this.selectRequirementButton.Click += new System.EventHandler(this.selectRequirementButton_Click);
@@ -83,7 +83,7 @@ namespace P3
             this.cancelButton.Location = new System.Drawing.Point(416, 392);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(133, 32);
-            this.cancelButton.TabIndex = 6;
+            this.cancelButton.TabIndex = 2;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
@@ -106,7 +106,7 @@ namespace P3
             this.RequirementsDataGridView.RowTemplate.Height = 24;
             this.RequirementsDataGridView.RowTemplate.ReadOnly = true;
             this.RequirementsDataGridView.Size = new System.Drawing.Size(602, 294);
-            this.RequirementsDataGridView.TabIndex = 7;
+            this.RequirementsDataGridView.TabIndex = 1;
             this.RequirementsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RequirementsDataGridView_CellContentClick);
             // 
             // ID
@@ -135,7 +135,7 @@ namespace P3
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.featureLabel);
             this.Name = "FormSelectRequirement";
-            this.Text = "FormSelectRequirement";
+            this.Text = "Select Requirement";
             ((System.ComponentModel.ISupportInitialize)(this.RequirementsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
