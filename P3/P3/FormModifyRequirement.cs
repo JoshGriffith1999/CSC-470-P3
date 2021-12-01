@@ -12,15 +12,24 @@ namespace P3
 {
     public partial class FormModifyRequirement : Form
     {
-        Feature Feature = new Feature();
+        List<Feature> FeatureList = new List<Feature>();
         Requirement Requirement = new Requirement();
-        public FormModifyRequirement(Feature feature, Requirement requirement)
+        Feature Feature = new Feature();
+        public FormModifyRequirement(List<Feature> featureList, Requirement requirement, FakeFeatureRepository FR, FakeRequirementRepositpry RR)
         {
             InitializeComponent();
             CenterToParent();
-            Feature = feature;
-            comboBox1.Text = Feature.Title.Trim();
-            statementLabel.Text = requirement.Statement.Trim();
+            FeatureList = featureList;
+            foreach (Feature f in FeatureList)
+            {
+                if (f.id == requirement.FeatureID)
+                {
+                    Feature = f;
+                    comboBox1.Text = f.Title.ToString();
+                }
+                //comment
+            }
+            textBox1.Text = requirement.Statement.Trim();
         }
 
         private void FormModifyRequirement_Load(object sender, EventArgs e)
@@ -42,6 +51,7 @@ namespace P3
             }
             else
             {
+                Feature.Title = comboBox1.SelectedItem.ToString();
                 Requirement.FeatureID = Feature.id;
                 Requirement.Statement = textBox1.Text.Trim();
                 this.DialogResult = DialogResult.OK;
